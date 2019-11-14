@@ -2,7 +2,10 @@ package com.example.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 public class registration extends AppCompatActivity {
@@ -16,5 +19,14 @@ public class registration extends AppCompatActivity {
         final EditText lastName = (findViewById(R.id.last));
         final EditText email = (findViewById(R.id.email));
         final EditText phoneNumber = (findViewById(R.id.phonenumber));
+
+        Button signup = findViewById(R.id.signup);
+
+        signup.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

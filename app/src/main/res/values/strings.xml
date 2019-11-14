@@ -1,1 +1,14 @@
-<resources></resources>
+<resources>
+    <string-array name="services">
+        <item>Select Maintenance</item>
+        <item>Appliances</item>
+        <item>Electrical</item>
+        <item>Plumbing</item>
+        <item>Home Cleaning</item>
+        <item>Tutoring</item>
+        <item>Packaging/Moving</item>
+        <item>Computer Repair</item>
+        <item>Home Repair/Painting</item>
+        <item>Pest Control</item>
+    </string-array>
+</resources>
