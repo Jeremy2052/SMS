@@ -21,7 +21,6 @@ public class registration extends AppCompatActivity {
         final EditText phoneNumber = (findViewById(R.id.phonenumber));
 
         Button signup = findViewById(R.id.signup);
-
         signup.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
