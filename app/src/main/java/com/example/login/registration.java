@@ -19,6 +19,8 @@ public class registration extends AppCompatActivity {
         final EditText lastName = (findViewById(R.id.last));
         final EditText email = (findViewById(R.id.email));
         final EditText phoneNumber = (findViewById(R.id.phonenumber));
+        final EditText username = (findViewById(R.id.usernameR));
+        final EditText password = (findViewById(R.id.passwordR));
 
         Button signup = findViewById(R.id.signup);
         signup.setOnClickListener(new View.OnClickListener() {

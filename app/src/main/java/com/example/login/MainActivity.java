@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 if(user.matches("jeremy") & pass.matches("123")){
                     Intent intent = new Intent(getApplicationContext(), mainScreen.class);
                     startActivity(intent);
+                    finish();
                 }else{
                     CharSequence text = "Login Unsuccessful";
                     int duration = Toast.LENGTH_SHORT;
@@ -41,8 +42,14 @@ public class MainActivity extends AppCompatActivity {
 
         signup.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
+                /*
+                * Add functionality for registering
+                * Check if email and phone number are in correct format
+                * */
                 Intent intent = new Intent(getApplicationContext(), registration.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -50,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), mainScreen.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
