@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
                 final String pass = password.getText().toString();
 
                 if(user.matches("jeremy") & pass.matches("123")){
-                    Intent intent = new Intent(getApplicationContext(), main_Screen.class);
+                    Intent intent = new Intent(getApplicationContext(), mainScreen.class);
                     startActivity(intent);
                 }else{
                     CharSequence text = "Login Unsuccessful";
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         skip.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), main_Screen.class);
+                Intent intent = new Intent(getApplicationContext(), mainScreen.class);
                 startActivity(intent);
             }
         });
