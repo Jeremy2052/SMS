@@ -26,8 +26,8 @@ public class registration extends AppCompatActivity {
 
         Button signup = findViewById(R.id.signup);
 
-        final String first = firstName.getText().toString();
-        final String last = lastName.getText().toString();
+        final String first2 = firstName.getText().toString();
+        final String last2 = lastName.getText().toString();
         final String Email = email.getText().toString();
         final String phone = phoneNumber.getText().toString();
         final String user = username.getText().toString();
@@ -36,12 +36,12 @@ public class registration extends AppCompatActivity {
         signup.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                if(TextUtils.isEmpty(first)){
+                if(TextUtils.isEmpty(first2)){
                     //first name is empty
                     Toast.makeText(getApplication(), "Enter a first name",Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if(TextUtils.isEmpty(last)){
+                if(TextUtils.isEmpty(last2)){
                     //first name is empty
                     Toast.makeText(getApplication(), "Enter a last name",Toast.LENGTH_SHORT).show();
                     return;

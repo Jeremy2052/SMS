@@ -51,7 +51,9 @@
         android:layout_marginRight="108dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:paddingTop="2dp"
         android:text=""
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -78,7 +80,7 @@
         android:ems="10"
         android:hint="xxx-xxx-xxxx"
         android:inputType="phone"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/signup"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
@@ -140,7 +142,8 @@
         android:layout_marginLeft="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text=""
+        android:paddingTop="2dp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/textView8"
         app:layout_constraintEnd_toStartOf="@+id/last"
         app:layout_constraintHorizontal_bias="0.0"
@@ -183,6 +186,8 @@
         android:layout_marginBottom="12dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:paddingTop="2dp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/textView9"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -206,6 +211,8 @@
         android:layout_marginBottom="8dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:paddingTop="2dp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
