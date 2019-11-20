@@ -21,9 +21,9 @@ public class registration extends AppCompatActivity implements View.OnClickListe
     private EditText lastName;
     private EditText email;
     private EditText phoneNumber;
-    private EditText username;
     private EditText password;
     private Button signup;
+    private Button vendorB;
 
     private FirebaseAuth firebaseAuth;
 
@@ -39,11 +39,12 @@ public class registration extends AppCompatActivity implements View.OnClickListe
         lastName = (findViewById(R.id.last));
         email = (findViewById(R.id.email));
         phoneNumber = (findViewById(R.id.phonenumber));
-        username = (findViewById(R.id.usernameR));
         password = (findViewById(R.id.passwordR));
         signup = findViewById(R.id.signup);
+        vendorB = findViewById(R.id.vendorB);
 
         signup.setOnClickListener(this);
+        vendorB.setOnClickListener(this);
 
     }
 
@@ -52,7 +53,6 @@ public class registration extends AppCompatActivity implements View.OnClickListe
         String last2 = lastName.getText().toString().trim();
         String Email = email.getText().toString().trim();
         String phone = phoneNumber.getText().toString().trim();
-        String user = username.getText().toString().trim();
         String pass = password.getText().toString().trim();
 
         if(TextUtils.isEmpty(first2)){
@@ -63,11 +63,6 @@ public class registration extends AppCompatActivity implements View.OnClickListe
         if(TextUtils.isEmpty(last2)){
             //first name is empty
             Toast.makeText(this, "Enter a last name",Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if(TextUtils.isEmpty(user)){
-            //first name is empty
-            Toast.makeText(this, "Enter a username",Toast.LENGTH_SHORT).show();
             return;
         }
         if(TextUtils.isEmpty(pass)){
@@ -98,15 +93,23 @@ public class registration extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
     }
+
 
     @Override
     public void onClick(View v) {
         if(v == signup){
             register();
         }
+        if(v == vendorB){
+            Intent intent = new Intent(this, vendorRegister.class);
+            startActivity(intent);
+            finish();
+        }
     }
+
+
 }

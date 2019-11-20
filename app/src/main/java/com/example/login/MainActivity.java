@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final EditText username = (findViewById(R.id.username));
+        final EditText email1 = (findViewById(R.id.email));
         final EditText password = (findViewById(R.id.password));
         final Button login = findViewById(R.id.login);
         final Button signup = findViewById(R.id.signup);
@@ -31,10 +31,10 @@ public class MainActivity extends AppCompatActivity {
 
 
             public void onClick(View v){
-                final String user = username.getText().toString();
+                final String email = email1.getText().toString();
                 final String pass = password.getText().toString();
 
-                if(user.matches("jeremy") & pass.matches("123")){
+                if(email.matches("jeremy") & pass.matches("123")){
                     Intent intent = new Intent(getApplicationContext(), mainScreen.class);
                     startActivity(intent);
                     finish();
