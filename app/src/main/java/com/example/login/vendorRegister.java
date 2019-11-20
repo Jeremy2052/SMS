@@ -87,15 +87,18 @@ public class vendorRegister extends AppCompatActivity implements View.OnClickLis
             return;
         }
 
-        Intent intent = new Intent(vendorRegister.this, nextRegister.class);
+        Intent intent = new Intent(this, nextRegister.class);
         startActivity(intent);
         finish();
     }
 
     @Override
     public void onClick(View v) {
-        if(v==next){
-            registerNext();
+        switch(v.getId()){
+            case R.id.next:
+                registerNext();
+                break;
+
         }
     }
 

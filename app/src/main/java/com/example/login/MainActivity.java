@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         final EditText email1 = (findViewById(R.id.email));
         final EditText password = (findViewById(R.id.password));
         final Button login = findViewById(R.id.login);
-        final Button signup = findViewById(R.id.next);
+        final Button signup = findViewById(R.id.signup);
         final Button skip = findViewById(R.id.skip);
 
 

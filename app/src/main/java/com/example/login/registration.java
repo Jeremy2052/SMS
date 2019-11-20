@@ -40,7 +40,7 @@ public class registration extends AppCompatActivity implements View.OnClickListe
         email = (findViewById(R.id.email));
         phoneNumber = (findViewById(R.id.phonenumber));
         password = (findViewById(R.id.passwordR));
-        signup = findViewById(R.id.next);
+        signup = findViewById(R.id.signup);
         vendorB = findViewById(R.id.vendorB);
 
         signup.setOnClickListener(this);
@@ -102,7 +102,7 @@ public class registration extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch(v.getId()){
-            case R.id.next:
+            case R.id.signup:
                 register();
                 break;
             case R.id.vendorB:
