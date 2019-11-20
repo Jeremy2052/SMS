@@ -1,6 +1,5 @@
 package com.example.login;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,10 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 
 public class vendorRegister extends AppCompatActivity implements View.OnClickListener {
 
@@ -40,6 +35,7 @@ public class vendorRegister extends AppCompatActivity implements View.OnClickLis
         city = (findViewById(R.id.city));
         zipcode = (findViewById(R.id.zipcode));
         states = (findViewById(R.id.states));
+        next = (findViewById(R.id.next));
 
         next.setOnClickListener(this);
     }
@@ -91,14 +87,14 @@ public class vendorRegister extends AppCompatActivity implements View.OnClickLis
             return;
         }
 
-        Intent intent = new Intent(getApplicationContext(), nextRegister.class);
+        Intent intent = new Intent(vendorRegister.this, nextRegister.class);
         startActivity(intent);
         finish();
     }
 
     @Override
     public void onClick(View v) {
-        if(v == next){
+        if(v==next){
             registerNext();
         }
     }

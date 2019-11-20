@@ -81,7 +81,7 @@
         android:hint="xxx-xxx-xxxx"
         android:inputType="phone"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/signup"
+        app:layout_constraintBottom_toTopOf="@+id/next"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
         app:layout_constraintVertical_bias="0.187" />
@@ -105,13 +105,13 @@
         android:layout_marginLeft="8dp"
         android:layout_marginBottom="8dp"
         android:text="Phone Number:"
-        app:layout_constraintBottom_toTopOf="@+id/signup"
+        app:layout_constraintBottom_toTopOf="@+id/next"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
         app:layout_constraintVertical_bias="0.721" />
 
     <Button
-        android:id="@+id/signup"
+        android:id="@+id/next"
         android:layout_width="130dp"
         android:layout_height="35dp"
         android:text="Sign Up"
@@ -156,7 +156,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginBottom="8dp"
         android:text="First:"
-        app:layout_constraintBottom_toTopOf="@+id/signup"
+        app:layout_constraintBottom_toTopOf="@+id/next"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
         app:layout_constraintVertical_bias="0.105" />
@@ -193,8 +193,9 @@
         android:layout_marginBottom="8dp"
         android:text="Register as vendor"
         android:textSize="10sp"
-        app:layout_constraintBottom_toTopOf="@+id/signup"
+        app:layout_constraintBottom_toTopOf="@+id/next"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

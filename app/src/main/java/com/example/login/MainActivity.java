@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
 
-import com.google.firebase.auth.FirebaseAuth;
-
 
 public class MainActivity extends AppCompatActivity {
     // JOSH WAS HERE COMMIT TEST 2...............................................
@@ -22,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         final EditText email1 = (findViewById(R.id.email));
         final EditText password = (findViewById(R.id.password));
         final Button login = findViewById(R.id.login);
-        final Button signup = findViewById(R.id.signup);
+        final Button signup = findViewById(R.id.next);
         final Button skip = findViewById(R.id.skip);
 
 
