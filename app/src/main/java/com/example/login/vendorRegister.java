@@ -28,9 +28,9 @@ public class vendorRegister extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_vendor_register);
 
         vendor = (findViewById(R.id.vendor));
-        email = (findViewById(R.id.email));
+        email = (findViewById(R.id.email2));
         phonenumber = (findViewById(R.id.phonenumber));
-        password = (findViewById(R.id.password));
+        password = (findViewById(R.id.passwordv));
         address = (findViewById(R.id.address));
         city = (findViewById(R.id.city));
         zipcode = (findViewById(R.id.zipcode));
@@ -87,18 +87,15 @@ public class vendorRegister extends AppCompatActivity implements View.OnClickLis
             return;
         }
 
-        Intent intent = new Intent(this, nextRegister.class);
-        startActivity(intent);
+        Intent intent3 = new Intent(this, nextRegister.class);
+        startActivity(intent3);
         finish();
     }
 
     @Override
     public void onClick(View v) {
-        switch(v.getId()){
-            case R.id.next:
-                registerNext();
-                break;
-
+        if(v == next){
+            registerNext();
         }
     }
 

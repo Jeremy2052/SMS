@@ -14,7 +14,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginBottom="12dp"
         android:text="Email:"
-        app:layout_constraintBottom_toTopOf="@+id/email"
+        app:layout_constraintBottom_toTopOf="@+id/email2"
         app:layout_constraintStart_toStartOf="parent" />
 
     <View
@@ -44,7 +44,7 @@
         app:layout_constraintVertical_bias="0.727" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/email2"
         android:layout_width="225dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -146,11 +146,11 @@
         android:layout_marginLeft="8dp"
         android:layout_marginBottom="8dp"
         android:text="Password:"
-        app:layout_constraintBottom_toTopOf="@+id/passwordR"
+        app:layout_constraintBottom_toTopOf="@+id/passwordv"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/passwordR"
+        android:id="@+id/passwordv"
         android:layout_width="225dp"
         android:layout_height="34dp"
         android:layout_marginStart="8dp"
@@ -183,6 +183,7 @@
         android:layout_marginTop="4dp"
         android:ems="10"
         android:inputType="textPostalAddress"
+        android:paddingTop="2dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
@@ -238,6 +239,7 @@
         android:layout_marginBottom="44dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:paddingTop="2dp"
         android:textSize="10sp"
         app:layout_constraintBottom_toTopOf="@+id/next"
         app:layout_constraintEnd_toEndOf="parent"

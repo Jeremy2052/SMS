@@ -1,15 +1,28 @@
 package com.example.login;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.*;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity {
-    // JOSH WAS HERE COMMIT TEST 2...............................................
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+        private EditText emaill;
+        private EditText password;
+        private Button login;
+        private Button signup;
+        private Button skip;
+
+        private FirebaseAuth firebaseAuth;
 
 
     @Override
@@ -17,52 +30,75 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final EditText email1 = (findViewById(R.id.email));
-        final EditText password = (findViewById(R.id.password));
-        final Button login = findViewById(R.id.login);
-        final Button signup = findViewById(R.id.signup);
-        final Button skip = findViewById(R.id.skip);
+        firebaseAuth = FirebaseAuth.getInstance();
+
+        if(firebaseAuth.getCurrentUser()!=null){
+            Intent intent2 = new Intent(MainActivity.this, mainScreen.class);
+            startActivity(intent2);
+            finish();
+        }
+
+        emaill = (findViewById(R.id.email));
+        password = (findViewById(R.id.password));
+        login = findViewById(R.id.login);
+        signup = findViewById(R.id.signup);
+        skip = findViewById(R.id.skip);
+
+        login.setOnClickListener(this);
+        signup.setOnClickListener(this);
+        skip.setOnClickListener(this);
 
 
+    }
 
-        login.setOnClickListener(new View.OnClickListener(){
+    private void userLogin(){
+        String email2 = emaill.getText().toString().trim();
+        String pass2 = password.getText().toString().trim();
 
+        if(TextUtils.isEmpty(email2)){
+            //first name is empty
+            Toast.makeText(this, "Enter an email",Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if(TextUtils.isEmpty(pass2)){
+            //first name is empty
+            Toast.makeText(this, "Enter a password",Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-            public void onClick(View v){
-                final String email = email1.getText().toString();
-                final String pass = password.getText().toString();
-
-                if(email.matches("jeremy") & pass.matches("123")){
-                    Intent intent = new Intent(getApplicationContext(), mainScreen.class);
-                    startActivity(intent);
+        firebaseAuth.signInWithEmailAndPassword(email2,pass2).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    Intent intent3 = new Intent(getApplicationContext(), mainScreen.class);
+                    startActivity(intent3);
                     finish();
                 }else{
-                    CharSequence text = "Login Unsuccessful";
-                    int duration = Toast.LENGTH_SHORT;
-                    Toast.makeText(getApplication(), text, duration).show();
+                    Toast.makeText(MainActivity.this, "Login failed",Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
 
-        signup.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
 
-                /*
-                * Add functionality for registering
-                * Check if email and phone number are in correct format
-                * */
-                Intent intent = new Intent(getApplicationContext(), registration.class);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch(v.getId()){
+            case R.id.login:
+                userLogin();
+                break;
+            case R.id.signup:
+                Intent intent = new Intent(MainActivity.this, registration.class);
                 startActivity(intent);
                 finish();
-            }
-        });
-
-        skip.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), mainScreen.class);
-                startActivity(intent);
+                break;
+            case R.id.skip:
+                Intent intent2 = new Intent(MainActivity.this, mainScreen.class);
+                startActivity(intent2);
                 finish();
-            }
-        });
+                break;
+        }
     }
 }
