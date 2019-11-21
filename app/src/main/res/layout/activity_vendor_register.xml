@@ -64,7 +64,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:ems="10"
-        android:hint="xxx-xxx-xxxx"
+        android:hint=""
         android:inputType="phone"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/signup"
@@ -157,7 +157,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:paddingTop="2dp"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/textView5"
@@ -184,6 +184,7 @@
         android:ems="10"
         android:inputType="textPostalAddress"
         android:paddingTop="2dp"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
@@ -191,7 +192,7 @@
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="4dp"
         android:text="City:"
         app:layout_constraintBottom_toTopOf="@+id/city"
         app:layout_constraintEnd_toEndOf="parent"
@@ -229,6 +230,8 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="number"
+        android:paddingTop="2dp"
+        android:textSize="10sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
@@ -236,7 +239,7 @@
         android:id="@+id/city"
         android:layout_width="138dp"
         android:layout_height="35dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="52dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:paddingTop="2dp"
@@ -256,5 +259,48 @@
         android:spinnerMode="dropdown"
         app:layout_constraintStart_toEndOf="@+id/zipcode"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="116dp"
+        android:layout_marginRight="116dp"
+        android:layout_marginBottom="12dp"
+        android:text="Service:"
+        app:layout_constraintBottom_toTopOf="@+id/spinner"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="152dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/vendor" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="76dp"
+        android:layout_marginRight="76dp"
+        android:layout_marginBottom="12dp"
+        android:text="Pay Rate $/hr:"
+        app:layout_constraintBottom_toTopOf="@+id/editText"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="158dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="144dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/textView11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintStart_toEndOf="@+id/email2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
