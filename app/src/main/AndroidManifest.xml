@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--Authors: Jeremy, Josh, Osman, Ishmeet-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.login">
 
@@ -10,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".nextRegister"></activity>
+        <activity android:name=".vendorMainScreen"></activity>
+        <activity android:name=".nextRegister" />
         <activity android:name=".vendorRegister" />
         <activity android:name=".mainScreen" />
         <activity android:name=".registration" />

@@ -86,8 +86,8 @@ public class vendorRegister extends AppCompatActivity implements View.OnClickLis
             Toast.makeText(this, "Enter a zipcode",Toast.LENGTH_SHORT).show();
             return;
         }
-
-        Intent intent3 = new Intent(this, nextRegister.class);
+        ////save as registering as vendor
+        Intent intent3 = new Intent(this, MainActivity.class);
         startActivity(intent3);
         finish();
     }
