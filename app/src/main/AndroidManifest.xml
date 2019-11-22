@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".vendorMainScreen"></activity>
+        <activity android:name=".paymentScreen"></activity>
+        <activity android:name=".vendorMainScreen" />
         <activity android:name=".nextRegister" />
         <activity android:name=".vendorRegister" />
         <activity android:name=".mainScreen" />
