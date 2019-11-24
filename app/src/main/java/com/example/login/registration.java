@@ -23,7 +23,6 @@ public class registration extends AppCompatActivity implements View.OnClickListe
     private EditText phoneNumber;
     private EditText password;
     private Button signup;
-    private Button vendorB;
 
     private FirebaseAuth firebaseAuth;
 
@@ -41,10 +40,10 @@ public class registration extends AppCompatActivity implements View.OnClickListe
         phoneNumber = (findViewById(R.id.phonenumber));
         password = (findViewById(R.id.passwordR));
         signup = findViewById(R.id.signup);
-        vendorB = findViewById(R.id.vendorB);
+
 
         signup.setOnClickListener(this);
-        vendorB.setOnClickListener(this);
+
 
     }
 
@@ -104,11 +103,6 @@ public class registration extends AppCompatActivity implements View.OnClickListe
         switch(v.getId()){
             case R.id.signup:
                 register();
-                break;
-            case R.id.vendorB:
-                Intent intent = new Intent(registration.this, vendorRegister.class);
-                startActivity(intent);
-                finish();
                 break;
 
         }

@@ -2,16 +2,20 @@ package com.example.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.Toast;
 
-public class vendorRegister extends AppCompatActivity implements View.OnClickListener {
+public class vendorRegister extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
     private EditText vendor;
     private EditText email;
@@ -19,6 +23,7 @@ public class vendorRegister extends AppCompatActivity implements View.OnClickLis
     private EditText password;
     private EditText address, city, zipcode;
     private Spinner states;
+    private Switch agree;
 
     private Button next;
 
@@ -26,6 +31,8 @@ public class vendorRegister extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vendor_register);
+
+
 
         vendor = (findViewById(R.id.vendor));
         email = (findViewById(R.id.email2));
@@ -36,8 +43,24 @@ public class vendorRegister extends AppCompatActivity implements View.OnClickLis
         zipcode = (findViewById(R.id.zipcode));
         states = (findViewById(R.id.states));
         next = (findViewById(R.id.next));
+        agree = findViewById(R.id.switch1);
 
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.states,android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        states.setAdapter(adapter);
+        states.setOnItemSelectedListener(this);
         next.setOnClickListener(this);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
+        String text = parent.getItemAtPosition(position).toString();
+        Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 
     private void registerNext() {
@@ -86,8 +109,12 @@ public class vendorRegister extends AppCompatActivity implements View.OnClickLis
             Toast.makeText(this, "Enter a zipcode",Toast.LENGTH_SHORT).show();
             return;
         }
+        //if statement for spinner being empty
+
+        //if statement for agree switch not clicked.
+
         ////save as registering as vendor
-        Intent intent3 = new Intent(this, MainActivity.class);
+        Intent intent3 = new Intent(this, vendorLogin.class);
         startActivity(intent3);
         finish();
     }

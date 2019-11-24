@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         private Button login;
         private Button signup;
         private Button skip;
+        private Button vendorLogin;
 
         private FirebaseAuth firebaseAuth;
 
@@ -43,7 +44,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         login = findViewById(R.id.login);
         signup = findViewById(R.id.signup);
         skip = findViewById(R.id.skip);
+        vendorLogin = findViewById(R.id.vendorLogin);
 
+        vendorLogin.setOnClickListener(this);
         login.setOnClickListener(this);
         signup.setOnClickListener(this);
         skip.setOnClickListener(this);
@@ -101,6 +104,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent2);
                 finish();
                 break;
+
+            case R.id.vendorLogin:
+                Intent intent3 = new Intent(MainActivity.this, vendorLogin.class);
+                startActivity(intent3);
+                finish();
         }
     }
 }

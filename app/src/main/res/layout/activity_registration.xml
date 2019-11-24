@@ -19,7 +19,8 @@
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintVertical_bias="0.2"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/textView2"
@@ -51,7 +52,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.87"
         app:layout_constraintStart_toEndOf="@+id/first"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/email"
@@ -61,42 +63,39 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="12dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/passwordR"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.433"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/phonenumber"
         android:layout_width="395dp"
         android:layout_height="45dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="196dp"
         android:ems="10"
         android:hint="Phone Number"
         android:inputType="phone"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/signup"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/signup"
-        android:layout_width="150dp"
-        android:layout_height="35dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="160dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="92dp"
         android:text="Sign Up"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toTopOf="@+id/vendorB"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -125,7 +124,8 @@
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/email"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/passwordR"
@@ -144,17 +144,6 @@
         app:layout_constraintBottom_toTopOf="@+id/phonenumber"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.375"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/vendorB"
-        android:layout_width="146dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="68dp"
-        android:text="Register as vendor"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
