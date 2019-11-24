@@ -13,7 +13,6 @@
         <activity android:name=".appliances" />
         <activity android:name=".paymentScreen" />
         <activity android:name=".vendorMainScreen" />
-        <activity android:name=".nextRegister" />
         <activity android:name=".vendorRegister" />
         <activity android:name=".mainScreen" />
         <activity android:name=".registration" />
