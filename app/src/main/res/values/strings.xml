@@ -1,4 +1,46 @@
 <resources>
+
+    <string-array name = "room">
+        <item>Select a Room</item>
+        <item>Kitchen</item>
+        <item>Bathroom</item>
+        <item>Bedroom</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name = "kitchen_appliances">
+        <item>Select a Kitchen Appliance</item>
+        <item>Microwave</item>
+        <item>Oven</item>
+        <item>Fridge</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name = "bathroom_appliances">
+        <item>Select a Bathroom Appliance</item>
+        <item>Hairdryer</item>
+        <item>Bidet</item>
+        <item>Shower Head</item>
+        <item>Tub</item>
+        <item>Sink</item>
+        <item>Light Bulb</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name = "bedroom_appliances">
+        <item>Select a Bedroom Appliance</item>
+        <item>Alarm Clock</item>
+        <item>Lamp</item>
+        <item>Mirror</item>
+        <item>TV</item>
+        <item>Ceiling Fan</item>
+        <item>Smoke Alarm</item>
+        <item>Bed</item>
+        <item>Night Stand</item>
+        <item>Table</item>
+        <item>Other</item>
+    </string-array>
+
     <string-array name="states">
         <item>AL</item>
         <item>AK</item>
@@ -52,5 +94,5 @@
         <item>WY</item>
 
     </string-array>
-    
+
 </resources>
