@@ -6,6 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".vendorMainScreen">
 
+    <View
+        style="@style/Divider"
+        android:layout_marginTop="76dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/addService"
         android:layout_width="265dp"
