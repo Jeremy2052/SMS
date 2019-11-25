@@ -16,6 +16,7 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
 
     private FirebaseAuth firebaseAuth;
 
+    private Button Orders;
     private Button logout;
     private ImageButton appliances;
 
@@ -30,10 +31,11 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
         firebaseAuth = FirebaseAuth.getInstance();
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
-
+        Orders = findViewById(R.id.orders);
         logout = findViewById(R.id.logout);
         appliances = findViewById(R.id.appliances);
 
+        Orders.setOnClickListener(this);
         logout.setOnClickListener(this);
         appliances.setOnClickListener(this);
     }
@@ -50,6 +52,11 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
             case R.id.appliances:
                 Intent intent2 = new Intent(this, appliances.class);
                 startActivity(intent2);
+                break;
+
+            case R.id.orders:
+                Intent order = new Intent(this, orders.class);
+                startActivity(order);
                 break;
         }
 

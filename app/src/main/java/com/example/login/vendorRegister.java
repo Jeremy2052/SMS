@@ -1,5 +1,6 @@
 package com.example.login;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActionBar;
@@ -15,6 +16,11 @@ import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
 public class vendorRegister extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
     private EditText vendor;
@@ -26,6 +32,7 @@ public class vendorRegister extends AppCompatActivity implements View.OnClickLis
     private Switch agree;
 
     private Button next;
+    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +57,7 @@ public class vendorRegister extends AppCompatActivity implements View.OnClickLis
         states.setAdapter(adapter);
         states.setOnItemSelectedListener(this);
         next.setOnClickListener(this);
+
     }
 
     @Override
@@ -112,8 +120,26 @@ public class vendorRegister extends AppCompatActivity implements View.OnClickLis
         //if statement for spinner being empty
 
         //if statement for agree switch not clicked.
+        if(agree.isChecked()){
+            //first name is empty
 
+        }else{
+            Toast.makeText(this, "You must agree to terms.",Toast.LENGTH_SHORT).show();
+            return;
+        }
         ////save as registering as vendor
+        firebaseAuth.createUserWithEmailAndPassword(Email,pass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    //display registration was successful
+                    Toast.makeText(vendorRegister.this, "Registration successful",Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(vendorRegister.this, "Could not register, please try again",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
         Intent intent3 = new Intent(this, vendorLogin.class);
         startActivity(intent3);
         finish();

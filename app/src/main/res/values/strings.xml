@@ -1,6 +1,6 @@
 <resources>
 
-    <string-array name = "room">
+    <string-array name="room">
         <item>Select a Room</item>
         <item>Kitchen</item>
         <item>Bathroom</item>
@@ -8,7 +8,7 @@
         <item>Other</item>
     </string-array>
 
-    <string-array name = "kitchen_appliances">
+    <string-array name="kitchen_appliances">
         <item>Select a Kitchen Appliance</item>
         <item>Microwave</item>
         <item>Oven</item>
@@ -16,7 +16,7 @@
         <item>Other</item>
     </string-array>
 
-    <string-array name = "bathroom_appliances">
+    <string-array name="bathroom_appliances">
         <item>Select a Bathroom Appliance</item>
         <item>Hairdryer</item>
         <item>Bidet</item>
@@ -27,7 +27,7 @@
         <item>Other</item>
     </string-array>
 
-    <string-array name = "bedroom_appliances">
+    <string-array name="bedroom_appliances">
         <item>Select a Bedroom Appliance</item>
         <item>Alarm Clock</item>
         <item>Lamp</item>
@@ -94,5 +94,12 @@
         <item>WY</item>
 
     </string-array>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Preference Titles -->
+
+    <!-- Messages Preferences -->
+
+    <!-- Sync Preferences -->
 
 </resources>
