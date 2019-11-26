@@ -25,8 +25,9 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+       Toolbar toolbar = findViewById(R.id.toolbar);
+       setSupportActionBar(toolbar);
+
 
         firebaseAuth = FirebaseAuth.getInstance();
         FirebaseUser user = firebaseAuth.getCurrentUser();
@@ -38,6 +39,8 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
         Orders.setOnClickListener(this);
         logout.setOnClickListener(this);
         appliances.setOnClickListener(this);
+
+
     }
 
     @Override
