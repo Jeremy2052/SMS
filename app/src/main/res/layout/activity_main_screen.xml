@@ -38,7 +38,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/TutoringICON" />
+        app:srcCompat="@drawable/tutoring" />
 
     <ImageButton
         android:id="@+id/electrical"
@@ -52,7 +52,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/Electrical_foreground" />
+        app:srcCompat="@drawable/electrical" />
 
     <ImageButton
         android:id="@+id/plumbing"
@@ -66,7 +66,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.884"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/PlumbingICON" />
+        app:srcCompat="@drawable/plumbing" />
 
     <ImageButton
         android:id="@+id/homeCleaning"
@@ -80,7 +80,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.112"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/CleaningICON" />
+        app:srcCompat="@drawable/cleaningicon" />
 
     <ImageButton
         android:id="@+id/appliances"
@@ -94,7 +94,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.112"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/Appliance_foreground" />
+        app:srcCompat="@drawable/appliancesicon" />
 
     <ImageButton
         android:id="@+id/packaging"
@@ -108,7 +108,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.884"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/PackingMovingICON" />
+        app:srcCompat="@drawable/packaging" />
 
     <ImageButton
         android:id="@+id/computer"
@@ -122,7 +122,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.112"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ComputerRepairICON" />
+        app:srcCompat="@drawable/computer_repair_icon" />
 
     <ImageButton
         android:id="@+id/homeRepair"
@@ -136,7 +136,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/HomeRepairPaintingICON" />
+        app:srcCompat="@drawable/homerepair" />
 
     <ImageButton
         android:id="@+id/pestControl"
@@ -150,7 +150,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.884"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/PestControlICON" />
+        app:srcCompat="@drawable/pestcontrol" />
 
     <Button
         android:id="@+id/orders"
