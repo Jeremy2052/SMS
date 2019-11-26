@@ -31,99 +31,126 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginBottom="300dp"
+        android:background="@null"
+        android:padding="5dp"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/ic_lock_idle_lock" />
+        app:srcCompat="@drawable/TutoringICON" />
 
     <ImageButton
         android:id="@+id/electrical"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginBottom="52dp"
+        android:background="@null"
+        android:padding="5dp"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/tutoring"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/ic_input_get" />
+        app:srcCompat="@mipmap/Electrical_foreground" />
 
     <ImageButton
         android:id="@+id/plumbing"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginBottom="52dp"
+        android:background="@null"
+        android:padding="5dp"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/packaging"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.884"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/ic_lock_idle_alarm" />
+        app:srcCompat="@drawable/PlumbingICON" />
 
     <ImageButton
         android:id="@+id/homeCleaning"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginBottom="44dp"
+        android:background="@null"
+        android:padding="5dp"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/computer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.112"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_call" />
+        app:srcCompat="@drawable/CleaningICON" />
 
     <ImageButton
         android:id="@+id/appliances"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginBottom="52dp"
+        android:background="@null"
+        android:padding="5dp"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/homeCleaning"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.112"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_preferences" />
+        app:srcCompat="@mipmap/Appliance_foreground" />
 
     <ImageButton
         android:id="@+id/packaging"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginBottom="300dp"
+        android:background="@null"
+        android:padding="5dp"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.884"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_edit" />
+        app:srcCompat="@drawable/PackingMovingICON" />
 
     <ImageButton
         android:id="@+id/computer"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginBottom="156dp"
+        android:background="@null"
+        android:padding="5dp"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.112"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_share" />
+        app:srcCompat="@drawable/ComputerRepairICON" />
 
     <ImageButton
         android:id="@+id/homeRepair"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginBottom="156dp"
+        android:background="@null"
+        android:padding="5dp"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/star_big_off" />
+        app:srcCompat="@drawable/HomeRepairPaintingICON" />
 
     <ImageButton
         android:id="@+id/pestControl"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginBottom="156dp"
+        android:background="@null"
+        android:padding="5dp"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.884"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        app:srcCompat="@drawable/PestControlICON" />
 
     <Button
         android:id="@+id/orders"
