@@ -1,6 +1,8 @@
 package com.example.login;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
@@ -14,7 +16,7 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class appliances extends AppCompatActivity {
+public class electrical extends AppCompatActivity {
     Spinner spinner_room, spinner_kitchen_app, spinner_bathroom_app, spinner_bedroom_app;
 
     EditText details;
@@ -81,6 +83,7 @@ public class appliances extends AppCompatActivity {
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
+                // NO YE
             }
         });
 
@@ -100,6 +103,7 @@ public class appliances extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
         spinner_bathroom_app.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -137,6 +141,7 @@ public class appliances extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
     }
