@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".electrical"></activity>
+        <activity android:name=".plumbing" />
         <activity android:name=".orders" />
         <activity android:name=".vendorLogin" />
         <activity android:name=".appliances" />

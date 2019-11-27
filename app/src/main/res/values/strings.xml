@@ -52,9 +52,9 @@
 
     <string-array name="area_electrical">
         <item>Please specify area that needs servicing</item>
-        <item>Outlets (110 V)</item>
+        <item>110V Outlet</item>
         <item>Lighting</item>
-        <item>Dryer Plug (220 V)</item>
+        <item>220V Plug</item>
         <item>Breaker</item>
         <item>Switch</item>
         <item>Other</item>

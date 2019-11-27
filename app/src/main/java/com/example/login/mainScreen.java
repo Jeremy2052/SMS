@@ -43,11 +43,13 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
         logout = findViewById(R.id.logout);
         appliances = findViewById(R.id.appliances);
         electrical = findViewById(R.id.electrical);
+        plumbing = findViewById(R.id.plumbing);
 
         Orders.setOnClickListener(this);
         logout.setOnClickListener(this);
         appliances.setOnClickListener(this);
         electrical.setOnClickListener(this);
+        plumbing.setOnClickListener(this);
     }
 
     @Override
@@ -66,6 +68,10 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
             case R.id.electrical:  // BUG: Doesn't open up electrical activity
                 Intent electrical = new Intent(this, electrical.class);
                 startActivity(electrical);
+                break;
+            case R.id.plumbing:
+                Intent plumbing = new Intent(this, plumbing.class);
+                startActivity(plumbing);
                 break;
 
             case R.id.orders:
