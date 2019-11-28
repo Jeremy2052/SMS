@@ -9,7 +9,7 @@
     </string-array>
 
     <string-array name="kitchen_appliances">
-        <item>Select a Kitchen Appliance</item>
+        <item>Select an Appliance</item>
         <item>Microwave</item>
         <item>Oven</item>
         <item>Fridge</item>
@@ -17,7 +17,7 @@
     </string-array>
 
     <string-array name="bathroom_appliances">
-        <item>Select a Bathroom Appliance</item>
+        <item>Select an Appliance</item>
         <item>Hairdryer</item>
         <item>Bidet</item>
         <item>Shower Head</item>
@@ -28,7 +28,7 @@
     </string-array>
 
     <string-array name="bedroom_appliances">
-        <item>Select a Bedroom Appliance</item>
+        <item>Select an Appliance</item>
         <item>Alarm Clock</item>
         <item>Lamp</item>
         <item>Mirror</item>
@@ -62,8 +62,8 @@
 
     <string-array name="room_plumbing">
         <item>Select a Room</item>
-        <item>Kitchen</item>
         <item>Bathroom</item>
+        <item>Kitchen</item>
         <item>Outdoor</item>
         <item>Other</item>
     </string-array>
@@ -74,6 +74,20 @@
         <item>Sink</item>
         <item>Bath</item>
         <item>Bidet</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="kitchen_plumbing">
+        <item>Please specify what needs plumbing</item>
+        <item>Sink</item>
+        <item>Dishwasher</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="outdoor_plumbing">
+        <item>Please specify what needs plumbing</item>
+        <item>Faucet</item>
+        <item>Underground Pipes</item>
         <item>Other</item>
     </string-array>
 

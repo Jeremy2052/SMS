@@ -13,7 +13,7 @@ import android.widget.*;
 
 public class plumbing extends AppCompatActivity {
 
-    Spinner spinner_room, spinner_bathroom_plumbing;
+    Spinner spinner_room, spinner_bathroom_plumbing, spinner_kitchen_plumbing, spinner_outdoor_plumbing;
     EditText details;
     TextView detail_length;
     Button submit;
@@ -25,16 +25,18 @@ public class plumbing extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plumbing);
 
-        spinner_room = (Spinner) findViewById(R.id.spinner_room);
-        spinner_bathroom_plumbing = (Spinner) findViewById(R.id.spinner_bathroom_plumbing);
         details = findViewById(R.id.details);
         detail_length = (TextView)findViewById(R.id.detail_length);
         submit = findViewById(R.id.submit);
-
+        spinner_room = (Spinner) findViewById(R.id.spinner_room);
+        spinner_bathroom_plumbing = (Spinner) findViewById(R.id.spinner_bathroom_plumbing);
+        spinner_kitchen_plumbing = (Spinner) findViewById(R.id.spinner_kitchen_plumbing);
+        spinner_outdoor_plumbing = (Spinner) findViewById(R.id.spinner_outdoor_plumbing);
 
         details.setVisibility(View.INVISIBLE);
         detail_length.setVisibility(View.INVISIBLE);
         submit.setVisibility(View.INVISIBLE);
+        spinner_kitchen_plumbing.setVisibility(View.INVISIBLE);
 
         details.addTextChangedListener(new TextWatcher() {
             @Override
@@ -56,17 +58,50 @@ public class plumbing extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 room = parent.getItemAtPosition(position).toString();
                 switch (room) {
-                    case "Select a Room":
+                    case "Bathroom":
+                        spinner_bathroom_plumbing.setVisibility(View.VISIBLE);
+                        spinner_kitchen_plumbing.setVisibility(View.INVISIBLE);
+                        spinner_outdoor_plumbing.setVisibility(View.INVISIBLE);
+
                         details.setVisibility(View.INVISIBLE);
                         detail_length.setVisibility(View.INVISIBLE);
                         submit.setVisibility(View.INVISIBLE);
-                        spinner_bathroom_plumbing.setVisibility(View.INVISIBLE);
                         break;
-                    case "Bathroom":
-                        spinner_bathroom_plumbing.setVisibility(View.VISIBLE);
+                    case "Kitchen":
+                        spinner_kitchen_plumbing.setVisibility(View.VISIBLE);
+                        spinner_bathroom_plumbing.setVisibility(View.INVISIBLE);
+                        spinner_outdoor_plumbing.setVisibility(View.INVISIBLE);
+
+                        details.setVisibility(View.INVISIBLE);
+                        detail_length.setVisibility(View.INVISIBLE);
+                        submit.setVisibility(View.INVISIBLE);
+                        break;
+                    case "Outdoor":
+                        spinner_kitchen_plumbing.setVisibility(View.INVISIBLE);
+                        spinner_bathroom_plumbing.setVisibility(View.INVISIBLE);
+                        spinner_outdoor_plumbing.setVisibility(View.VISIBLE);
+
+                        details.setVisibility(View.INVISIBLE);
+                        detail_length.setVisibility(View.INVISIBLE);
+                        submit.setVisibility(View.INVISIBLE);
+                        break;
+                    case "Other":
+                        spinner_bathroom_plumbing.setVisibility(View.INVISIBLE);
+                        spinner_kitchen_plumbing.setVisibility(View.INVISIBLE);
+                        spinner_outdoor_plumbing.setVisibility(View.INVISIBLE);
+
+                        details.setVisibility(View.VISIBLE);
+                        detail_length.setVisibility(View.VISIBLE);
+                        submit.setVisibility(View.VISIBLE);
                         break;
                     default:
                         spinner_bathroom_plumbing.setVisibility(View.INVISIBLE);
+                        spinner_kitchen_plumbing.setVisibility(View.INVISIBLE);
+                        spinner_outdoor_plumbing.setVisibility(View.INVISIBLE);
+
+                        details.setVisibility(View.INVISIBLE);
+                        detail_length.setVisibility(View.INVISIBLE);
+                        submit.setVisibility(View.INVISIBLE);
                         break;
                 }
             }
@@ -85,7 +120,7 @@ public class plumbing extends AppCompatActivity {
                         detail_length.setVisibility(View.INVISIBLE);
                         submit.setVisibility(View.INVISIBLE);
                         break;
-                    case "default":
+                    default:
                         details.setVisibility(View.VISIBLE);
                         detail_length.setVisibility(View.VISIBLE);
                         submit.setVisibility(View.VISIBLE);
@@ -97,7 +132,49 @@ public class plumbing extends AppCompatActivity {
             }
         });
 
+        spinner_kitchen_plumbing.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                plumbing_item = parent.getItemAtPosition(position).toString();
+                switch (plumbing_item) {
+                    case "Please specify what needs plumbing":
+                        details.setVisibility(View.INVISIBLE);
+                        detail_length.setVisibility(View.INVISIBLE);
+                        submit.setVisibility(View.INVISIBLE);
+                        break;
+                    default:
+                        details.setVisibility(View.VISIBLE);
+                        detail_length.setVisibility(View.VISIBLE);
+                        submit.setVisibility(View.VISIBLE);
+                        break;
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
 
+        spinner_outdoor_plumbing.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                plumbing_item = parent.getItemAtPosition(position).toString();
+                switch (plumbing_item) {
+                    case "Please specify what needs plumbing":
+                        details.setVisibility(View.INVISIBLE);
+                        detail_length.setVisibility(View.INVISIBLE);
+                        submit.setVisibility(View.INVISIBLE);
+                        break;
+                    default:
+                        details.setVisibility(View.VISIBLE);
+                        detail_length.setVisibility(View.VISIBLE);
+                        submit.setVisibility(View.VISIBLE);
+                        break;
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
 
 
     }
