@@ -53,6 +53,7 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
         packaging_moving = findViewById(R.id.packaging);
         computer_repair = findViewById(R.id.computer);
         home_repair = findViewById(R.id.homeRepair);
+        pest_control = findViewById(R.id.pestControl);
 
         settingB.setOnClickListener(this);
         back.setOnClickListener(this);
@@ -66,6 +67,7 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
         packaging_moving.setOnClickListener(this);
         computer_repair.setOnClickListener(this);
         home_repair.setOnClickListener(this);
+        pest_control.setOnClickListener(this);
     }
 
     @Override
@@ -115,8 +117,10 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
                 Intent home_repair = new Intent(this, home_repair.class);
                 startActivity(home_repair);
                 break;
-
-
+            case R.id.pestControl:
+                Intent pest_control = new Intent(this, pest_control.class);
+                startActivity(pest_control);
+                break;
             case R.id.backB:
                 Intent back = new Intent(mainScreen.this, MainActivity.class);
                 startActivity(back);

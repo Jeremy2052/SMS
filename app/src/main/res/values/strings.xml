@@ -125,6 +125,34 @@
         <item>Extra Large</item>
     </string-array>
 
+    <string-array name="home_repair">
+        <item>Please select home repair type</item>
+        <item>Paint</item>
+        <item>Wall and ceiling damage</item>
+        <item>Doors, hinges, locks and handles</item>
+        <item>Ceiling Fans</item>
+        <item>Smoke Detector</item>
+        <item>Windows</item>
+        <item>Blinds</item>
+        <item>Concrete</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="pest">
+        <item>Please select pest type</item>
+        <item>Mice</item>
+        <item>Possums</item>
+        <item>Raccoons</item>
+        <item>Bedbugs</item>
+        <item>Termites</item>
+        <item>Ants</item>
+        <item>Mosquitoes</item>
+        <item>Wasps</item>
+        <item>Earwigs</item>
+        <item>Spiders</item>
+        <item>Roaches</item>
+    </string-array>
+
 
     <string-array name="states">
         <item>AL</item>

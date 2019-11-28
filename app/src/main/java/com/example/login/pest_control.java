@@ -10,20 +10,21 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.*;
 
-public class home_repair extends AppCompatActivity {
-    Spinner spinner_damage;
+public class pest_control extends AppCompatActivity {
+    Spinner spinner_pest;
     EditText details;
     TextView detail_length;
     Button submit;
 
-    String repair;
+    String pest_type;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_repair);
+        setContentView(R.layout.activity_pest_control);
 
-        spinner_damage = (Spinner) findViewById(R.id.spinner_damage);
+        spinner_pest = (Spinner) findViewById(R.id.spinner_pest);
+
         details = findViewById(R.id.details);
         detail_length = (TextView)findViewById(R.id.detail_length);
         submit = findViewById(R.id.submit);
@@ -48,12 +49,12 @@ public class home_repair extends AppCompatActivity {
             }
         });
 
-        spinner_damage.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinner_pest.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                repair = parent.getItemAtPosition(position).toString();
-                switch (repair) {
-                    case "Please select home repair type":
+                pest_type = parent.getItemAtPosition(position).toString();
+                switch (pest_type) {
+                    case "Please select pest type":
                         details.setVisibility(View.INVISIBLE);
                         detail_length.setVisibility(View.INVISIBLE);
                         submit.setVisibility(View.INVISIBLE);
@@ -69,7 +70,6 @@ public class home_repair extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
-
     }
 }
 
