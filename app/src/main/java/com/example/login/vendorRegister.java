@@ -20,6 +20,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class vendorRegister extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
@@ -30,6 +32,7 @@ public class vendorRegister extends AppCompatActivity implements View.OnClickLis
     private EditText address, city, zipcode;
     private Spinner states;
     private Switch agree;
+    String Vendor,Address,Email,phone,pass,City,Zipcode;
 
     private Button next;
     private FirebaseAuth firebaseAuth;
@@ -63,7 +66,6 @@ public class vendorRegister extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
 
-
     }
 
     @Override
@@ -72,13 +74,13 @@ public class vendorRegister extends AppCompatActivity implements View.OnClickLis
     }
 
     private void registerNext() {
-        String Vendor = vendor.getText().toString().trim();
-        String  Address = address.getText().toString().trim();
-        String Email = email.getText().toString().trim();
-        String phone = phonenumber.getText().toString().trim();
-        String pass = password.getText().toString().trim();
-        String City = city.getText().toString().trim();
-        String Zipcode = zipcode.getText().toString().trim();
+        Vendor = vendor.getText().toString().trim();
+         Address = address.getText().toString().trim();
+        Email = email.getText().toString().trim();
+         phone = phonenumber.getText().toString().trim();
+         pass = password.getText().toString().trim();
+         City = city.getText().toString().trim();
+         Zipcode = zipcode.getText().toString().trim();
 
         //Spinner
 
@@ -131,6 +133,7 @@ public class vendorRegister extends AppCompatActivity implements View.OnClickLis
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
+                    sendVendor();
                     //display registration was successful
                     Toast.makeText(vendorRegister.this, "Registration successful",Toast.LENGTH_SHORT).show();
                 }else{
@@ -142,6 +145,13 @@ public class vendorRegister extends AppCompatActivity implements View.OnClickLis
         Intent intent3 = new Intent(this, vendorLogin.class);
         startActivity(intent3);
         finish();
+    }
+
+    private void sendVendor(){
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = firebaseDatabase.getReference(firebaseAuth.getUid());
+        vendorInformation vendorInformation = new vendorInformation(Vendor,Address,Email,phone,pass,City,Zipcode);
+        myRef.setValue(vendorInformation);
     }
 
     @Override

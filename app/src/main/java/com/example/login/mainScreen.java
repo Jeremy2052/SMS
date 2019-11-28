@@ -39,10 +39,10 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
       // setSupportActionBar(toolbar);
 
         firebaseAuth = FirebaseAuth.getInstance();
-        FirebaseUser user = firebaseAuth.getCurrentUser();
+        //FirebaseUser user = firebaseAuth.getCurrentUser();
 
         settingB = findViewById(R.id.settingB);
-        back = findViewById(R.id.back);
+        back = findViewById(R.id.backB);
         Orders = findViewById(R.id.orders);
         logout = findViewById(R.id.logout);
         appliances = findViewById(R.id.appliances);
@@ -62,10 +62,13 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.logout:
-                firebaseAuth.signOut();
-                finish();
-                Intent intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
+                if(firebaseAuth.getCurrentUser()!=null){
+                    firebaseAuth.signOut();
+                    finish();
+                    Intent intent = new Intent(this, MainActivity.class);
+                    startActivity(intent);
+                }
+
                 break;
             case R.id.appliances:
                 Intent appliance = new Intent(this, appliances.class);
@@ -85,8 +88,8 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
                 startActivity(order);
                 break;
 
-            case R.id.back:
-                Intent back = new Intent(this, MainActivity.class);
+            case R.id.backB:
+                Intent back = new Intent(mainScreen.this, MainActivity.class);
                 startActivity(back);
                 finish();
                 break;
