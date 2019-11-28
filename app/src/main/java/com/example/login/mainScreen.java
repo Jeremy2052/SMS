@@ -48,6 +48,7 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
         appliances = findViewById(R.id.appliances);
         electrical = findViewById(R.id.electrical);
         plumbing = findViewById(R.id.plumbing);
+        home_cleaning = findViewById(R.id.homeCleaning);
 
         settingB.setOnClickListener(this);
         back.setOnClickListener(this);
@@ -56,6 +57,7 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
         appliances.setOnClickListener(this);
         electrical.setOnClickListener(this);
         plumbing.setOnClickListener(this);
+        home_cleaning.setOnClickListener(this);
     }
 
     @Override
@@ -81,6 +83,10 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
             case R.id.plumbing:
                 Intent plumbing = new Intent(this, plumbing.class);
                 startActivity(plumbing);
+                break;
+            case R.id.homeCleaning:
+                Intent home_cleaning = new Intent(this, home_cleaning.class);
+                startActivity(home_cleaning);
                 break;
 
             case R.id.orders:
