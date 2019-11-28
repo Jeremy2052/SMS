@@ -8,9 +8,6 @@ public class UserInformation {
     public String phone;
     public String password;
 
-    public UserInformation(){
-
-    }
 
     public UserInformation(String first, String last, String email, String phone, String password) {
         this.first = first;

@@ -33,12 +33,9 @@ public class registration extends AppCompatActivity implements View.OnClickListe
     private EditText phoneNumber;
     private EditText password;
     private Button signup;
+    String first2, last2, Email, phone, pass;
 
     private FirebaseAuth firebaseAuth;
-
-    //private DatabaseReference databaseReference;
-
-
 
 
     @Override
@@ -47,8 +44,6 @@ public class registration extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_registration);
 
         firebaseAuth = FirebaseAuth.getInstance();
-
-       // databaseReference = FirebaseDatabase.getInstance().getReference();
 
         firstName = (findViewById(R.id.first));
         lastName = (findViewById(R.id.last));
@@ -62,11 +57,11 @@ public class registration extends AppCompatActivity implements View.OnClickListe
 
 
     private void register(){
-        String first2 = firstName.getText().toString().trim();
-        String last2 = lastName.getText().toString().trim();
-        String Email = email.getText().toString().trim();
-        String phone = phoneNumber.getText().toString().trim();
-        String pass = password.getText().toString().trim();
+         first2 = firstName.getText().toString().trim();
+         last2 = lastName.getText().toString().trim();
+         Email = email.getText().toString().trim();
+         phone = phoneNumber.getText().toString().trim();
+         pass = password.getText().toString().trim();
 
         if(TextUtils.isEmpty(first2)){
             //first name is empty
@@ -94,10 +89,6 @@ public class registration extends AppCompatActivity implements View.OnClickListe
             return;
         }
 
-       // UserInformation userInformation = new UserInformation(first2,last2,Email,phone,pass);
-       // FirebaseUser user = firebaseAuth.getCurrentUser();
-       // databaseReference.child("Customers").child(user).setValue(userInformation);
-
         firebaseAuth.createUserWithEmailAndPassword(Email,pass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -107,31 +98,10 @@ public class registration extends AppCompatActivity implements View.OnClickListe
                     Toast.makeText(registration.this, "Could not register, please try again",Toast.LENGTH_SHORT).show();
 
                 }else{
-
-                    //String userId = firebaseAuth.getCurrentUser().getUid();
-                    DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference();
-
-                    String first3 = firstName.getText().toString();
-                    String last3 = lastName.getText().toString();
-                    String Email3 = email.getText().toString();
-                    String phone3 = phoneNumber.getText().toString();
-                    String pass3 = password.getText().toString();
-
-                    UserInformation userInformation = new UserInformation(first3,last3,Email3,phone3,pass3);
-                    FirebaseUser user = firebaseAuth.getCurrentUser();
-                    databaseReference.child("Customers").child(user.getUid()).push().setValue(userInformation);
-
-                   /* Map newPost = new HashMap();
-                    newPost.put("First", first3);
-                    newPost.put("Last", last3);
-                    newPost.put("Email", Email3);
-                    newPost.put("Phone", phone3);
-                    newPost.put("Password", pass3);
-
-                    databaseReference.push().setValue(newPost);*/
-
+                    sendUser();
                     //display registration was successful
                     Toast.makeText(registration.this, "Registration successful",Toast.LENGTH_SHORT).show();
+
                 }
             }
         });
@@ -141,6 +111,12 @@ public class registration extends AppCompatActivity implements View.OnClickListe
         finish();
     }
 
+    private void sendUser(){
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = firebaseDatabase.getReference(firebaseAuth.getUid());
+        UserInformation userInformation = new UserInformation(first2,last2,Email,phone,pass);
+        myRef.setValue(userInformation);
+    }
 
     @Override
     public void onClick(View v) {
