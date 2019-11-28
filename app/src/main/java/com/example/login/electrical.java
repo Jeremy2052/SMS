@@ -16,7 +16,9 @@ public class electrical extends AppCompatActivity {
     Spinner spinner_room, spinner_area_electrical;
     EditText details;
     TextView detail_length;
-    String room, area_electrical;
+    Button submit;
+
+    String room, electrical_item;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +29,12 @@ public class electrical extends AppCompatActivity {
         spinner_area_electrical = (Spinner) findViewById(R.id.spinner_area_electrical);
         details = findViewById(R.id.details);
         detail_length = (TextView)findViewById(R.id.detail_length);
+        submit = findViewById(R.id.submit);
 
 
         details.setVisibility(View.INVISIBLE);
         detail_length.setVisibility(View.INVISIBLE);
+        submit.setVisibility(View.INVISIBLE);
 
         details.addTextChangedListener(new TextWatcher() {
             @Override
@@ -56,6 +60,7 @@ public class electrical extends AppCompatActivity {
                         spinner_area_electrical.setVisibility(View.INVISIBLE);
                         details.setVisibility(View.INVISIBLE);
                         detail_length.setVisibility(View.INVISIBLE);
+                        submit.setVisibility(View.INVISIBLE);
                         break;
                     default:
                         spinner_area_electrical.setVisibility(View.VISIBLE);
@@ -70,15 +75,17 @@ public class electrical extends AppCompatActivity {
         spinner_area_electrical.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                room = parent.getItemAtPosition(position).toString();
-                switch (room) {
+                electrical_item = parent.getItemAtPosition(position).toString();
+                switch (electrical_item) {
                     case "Please specify area that needs servicing":
                         details.setVisibility(View.INVISIBLE);
                         detail_length.setVisibility(View.INVISIBLE);
+                        submit.setVisibility(View.INVISIBLE);
                         break;
                     default:
                         details.setVisibility(View.VISIBLE);
                         detail_length.setVisibility(View.VISIBLE);
+                        submit.setVisibility(View.VISIBLE);
                         break;
                 }
             }

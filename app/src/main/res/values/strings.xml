@@ -60,6 +60,24 @@
         <item>Other</item>
     </string-array>
 
+    <string-array name="room_plumbing">
+        <item>Select a Room</item>
+        <item>Kitchen</item>
+        <item>Bathroom</item>
+        <item>Outdoor</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="bathroom_plumbing">
+        <item>Please specify what needs plumbing</item>
+        <item>Toilet</item>
+        <item>Sink</item>
+        <item>Bath</item>
+        <item>Bidet</item>
+        <item>Other</item>
+    </string-array>
+
+
     <string-array name="states">
         <item>AL</item>
         <item>AK</item>

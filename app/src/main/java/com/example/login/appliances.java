@@ -12,11 +12,11 @@ import android.widget.*;
 
 public class appliances extends AppCompatActivity {
     Spinner spinner_room, spinner_kitchen_app, spinner_bathroom_app, spinner_bedroom_app;
-
     EditText details;
     TextView detail_length;
+    Button submit;
 
-    String room, room_appliance;
+    String room, appliance_item;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,12 +29,14 @@ public class appliances extends AppCompatActivity {
         spinner_bedroom_app = (Spinner) findViewById(R.id.spinner_bedroom_app);
         details = findViewById(R.id.details);
         detail_length = (TextView)findViewById(R.id.detail_length);
+        submit = findViewById(R.id.submit);
 
         spinner_kitchen_app.setVisibility(View.INVISIBLE);
         spinner_bathroom_app.setVisibility(View.INVISIBLE);
         spinner_bedroom_app.setVisibility(View.INVISIBLE);
         details.setVisibility(View.INVISIBLE);
         detail_length.setVisibility(View.INVISIBLE);
+        submit.setVisibility(View.INVISIBLE);
 
 
         details.addTextChangedListener(new TextWatcher() {
@@ -64,6 +66,7 @@ public class appliances extends AppCompatActivity {
                         spinner_bedroom_app.setVisibility(View.INVISIBLE);
                         details.setVisibility(View.INVISIBLE);
                         detail_length.setVisibility(View.INVISIBLE);
+                        submit.setVisibility(View.INVISIBLE);
                         break;
                     case "Kitchen":
                         Toast.makeText(parent.getContext(), "Kitchen", Toast.LENGTH_SHORT).show();
@@ -72,6 +75,7 @@ public class appliances extends AppCompatActivity {
                         spinner_bedroom_app.setVisibility(View.INVISIBLE);
                         details.setVisibility(View.INVISIBLE);
                         detail_length.setVisibility(View.INVISIBLE);
+                        submit.setVisibility(View.INVISIBLE);
                         break;
                     case "Bathroom":
                         Toast.makeText(parent.getContext(), "Bathroom", Toast.LENGTH_SHORT).show();
@@ -80,6 +84,7 @@ public class appliances extends AppCompatActivity {
                         spinner_bedroom_app.setVisibility(View.INVISIBLE);
                         details.setVisibility(View.INVISIBLE);
                         detail_length.setVisibility(View.INVISIBLE);
+                        submit.setVisibility(View.INVISIBLE);
                         break;
                     case "Bedroom":
                         Toast.makeText(parent.getContext(), "Bedroom", Toast.LENGTH_SHORT).show();
@@ -88,6 +93,7 @@ public class appliances extends AppCompatActivity {
                         spinner_bedroom_app.setVisibility(View.VISIBLE);
                         details.setVisibility(View.INVISIBLE);
                         detail_length.setVisibility(View.INVISIBLE);
+                        submit.setVisibility(View.INVISIBLE);
                         break;
                     case "Other":
                         Toast.makeText(parent.getContext(), "Other", Toast.LENGTH_SHORT).show();
@@ -96,6 +102,7 @@ public class appliances extends AppCompatActivity {
                         spinner_bedroom_app.setVisibility(View.INVISIBLE);
                         details.setVisibility(View.VISIBLE);
                         detail_length.setVisibility(View.VISIBLE);
+                        submit.setVisibility(View.VISIBLE);
                         break;
                 }
             }
@@ -107,8 +114,8 @@ public class appliances extends AppCompatActivity {
         spinner_kitchen_app.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                room_appliance = parent.getItemAtPosition(position).toString();
-                switch (room_appliance){
+                appliance_item = parent.getItemAtPosition(position).toString();
+                switch (appliance_item){
                     case "Select a Kitchen Appliance":
                         details.setVisibility(View.INVISIBLE);
                         detail_length.setVisibility(View.INVISIBLE);
@@ -116,10 +123,10 @@ public class appliances extends AppCompatActivity {
                     default:
                         details.setVisibility(View.VISIBLE);
                         detail_length.setVisibility(View.VISIBLE);
+                        submit.setVisibility(View.VISIBLE);
                         break;
                 }
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
             }
@@ -127,8 +134,8 @@ public class appliances extends AppCompatActivity {
         spinner_bathroom_app.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                room_appliance = parent.getItemAtPosition(position).toString();
-                switch (room_appliance){
+                appliance_item = parent.getItemAtPosition(position).toString();
+                switch (appliance_item){
                     case "Select a Bathroom Appliance":
                         details.setVisibility(View.INVISIBLE);
                         detail_length.setVisibility(View.INVISIBLE);
@@ -136,6 +143,7 @@ public class appliances extends AppCompatActivity {
                     default:
                         details.setVisibility(View.VISIBLE);
                         detail_length.setVisibility(View.VISIBLE);
+                        submit.setVisibility(View.VISIBLE);
                         break;
                 }
             }
@@ -148,15 +156,17 @@ public class appliances extends AppCompatActivity {
         spinner_bedroom_app.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                room_appliance = parent.getItemAtPosition(position).toString();
-                switch (room_appliance){
+                appliance_item = parent.getItemAtPosition(position).toString();
+                switch (appliance_item){
                     case "Select a Bedroom Appliance":
                         details.setVisibility(View.INVISIBLE);
                         detail_length.setVisibility(View.INVISIBLE);
+                        submit.setVisibility(View.INVISIBLE);
                         break;
                     default:
                         details.setVisibility(View.VISIBLE);
                         detail_length.setVisibility(View.VISIBLE);
+                        submit.setVisibility(View.VISIBLE);
                         break;
                 }
             }

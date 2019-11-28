@@ -105,14 +105,14 @@
         android:layout_marginLeft="117dp"
         android:layout_marginTop="20dp"
         android:background="@android:drawable/alert_light_frame"
-        android:hint="Please provide additional details here."
+        android:hint="Please provide additional details here. (optional)"
         android:visibility="visible"
         android:maxLength="300"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner_kitchen_app" />
 
     <Button
-        android:id="@+id/orders"
+        android:id="@+id/submit"
         android:layout_width="159dp"
         android:layout_height="39dp"
         android:layout_marginBottom="50dp"
