@@ -16,8 +16,10 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
 
     private FirebaseAuth firebaseAuth;
 
+    private Button back;
     private Button Orders;
     private Button logout;
+    private Button settingB;
     private ImageButton appliances;
     private ImageButton electrical;
     private ImageButton plumbing;
@@ -33,18 +35,22 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
 
-       Toolbar toolbar = findViewById(R.id.toolbar);
-       setSupportActionBar(toolbar);
+      // Toolbar toolbar = findViewById(R.id.toolbar);
+      // setSupportActionBar(toolbar);
 
         firebaseAuth = FirebaseAuth.getInstance();
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
+        settingB = findViewById(R.id.settingB);
+        back = findViewById(R.id.back);
         Orders = findViewById(R.id.orders);
         logout = findViewById(R.id.logout);
         appliances = findViewById(R.id.appliances);
         electrical = findViewById(R.id.electrical);
         plumbing = findViewById(R.id.plumbing);
 
+        settingB.setOnClickListener(this);
+        back.setOnClickListener(this);
         Orders.setOnClickListener(this);
         logout.setOnClickListener(this);
         appliances.setOnClickListener(this);
@@ -78,6 +84,18 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
                 Intent order = new Intent(this, orders.class);
                 startActivity(order);
                 break;
+
+            case R.id.back:
+                Intent back = new Intent(this, MainActivity.class);
+                startActivity(back);
+                finish();
+                break;
+            case R.id.settingB:
+                Intent sett = new Intent(this, settings.class);
+                startActivity(sett);
+                finish();
+                break;
+
         }
 
     }

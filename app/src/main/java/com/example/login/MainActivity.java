@@ -76,8 +76,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     Intent intent3 = new Intent(getApplicationContext(), mainScreen.class);
                     startActivity(intent3);
                     finish();
-                    ///////if login is a vendor under email used, go to main screen for vendor
-                    ///////instead of customers main menu.
+
                 }else{
                     Toast.makeText(MainActivity.this, "Login failed",Toast.LENGTH_SHORT).show();
                 }
@@ -97,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.signup:
                 Intent intent = new Intent(MainActivity.this, registration.class);
                 startActivity(intent);
-                finish();
+
                 break;
             case R.id.skip:
                 Intent intent2 = new Intent(MainActivity.this, mainScreen.class);

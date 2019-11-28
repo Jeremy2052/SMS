@@ -39,7 +39,7 @@ public class vendorRegister extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vendor_register);
 
-
+        firebaseAuth = FirebaseAuth.getInstance();
 
         vendor = (findViewById(R.id.vendor));
         email = (findViewById(R.id.email2));
@@ -121,7 +121,6 @@ public class vendorRegister extends AppCompatActivity implements View.OnClickLis
 
         //if statement for agree switch not clicked.
         if(agree.isChecked()){
-            //first name is empty
 
         }else{
             Toast.makeText(this, "You must agree to terms.",Toast.LENGTH_SHORT).show();

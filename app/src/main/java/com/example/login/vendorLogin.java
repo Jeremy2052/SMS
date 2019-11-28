@@ -32,16 +32,17 @@ public class vendorLogin extends AppCompatActivity implements View.OnClickListen
 
         firebaseAuth = FirebaseAuth.getInstance();
 
+        //if vendor already logged in go to main screen.
         if(firebaseAuth.getCurrentUser()!=null){
-            Intent intent2 = new Intent(this, vendorMainScreen.class);
+            Intent intent2 = new Intent(vendorLogin.this, vendorMainScreen.class);
             startActivity(intent2);
             finish();
         }
 
-        emailV = findViewById(R.id.email);
-        passwordV = findViewById(R.id.password);
-        loginV = findViewById(R.id.login);
-        signupV = findViewById(R.id.signup);
+        emailV = findViewById(R.id.emailv);
+        passwordV = findViewById(R.id.passwordv);
+        loginV = findViewById(R.id.loginV);
+        signupV = findViewById(R.id.signupV);
 
         loginV.setOnClickListener(this);
         signupV.setOnClickListener(this);
@@ -70,8 +71,7 @@ public class vendorLogin extends AppCompatActivity implements View.OnClickListen
                     Intent intent3 = new Intent(getApplicationContext(), vendorMainScreen.class);
                     startActivity(intent3);
                     finish();
-                    ///////if login is a vendor under email used, go to main screen for vendor
-                    ///////instead of customers main menu.
+
                 }else{
                     Toast.makeText(vendorLogin.this, "Login failed",Toast.LENGTH_SHORT).show();
                 }
@@ -83,13 +83,13 @@ public class vendorLogin extends AppCompatActivity implements View.OnClickListen
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.login:
+            case R.id.loginV:
                 vendor_Login();
                 break;
-            case R.id.signup:
+            case R.id.signupV:
                 Intent intent2 = new Intent(this, vendorRegister.class);
                 startActivity(intent2);
-                finish();
+
                 break;
         }
 
