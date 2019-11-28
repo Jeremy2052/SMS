@@ -1,7 +1,6 @@
 package com.example.login;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
@@ -11,22 +10,20 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.*;
 
-public class tutoring extends AppCompatActivity {
-
-    Spinner spinner_subject, spinner_grade;
+public class packaging_moving extends AppCompatActivity {
+    Spinner spinner_trailer_size;
     EditText details;
     TextView detail_length;
     Button submit;
 
-    String subject, grade;
+    String size;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tutoring);
+        setContentView(R.layout.activity_packaging_moving);
 
-        spinner_subject = (Spinner) findViewById(R.id.spinner_subject);
-        spinner_grade = (Spinner) findViewById(R.id.spinner_grade);
+        spinner_trailer_size = (Spinner) findViewById(R.id.spinner_trailer_size);
         details = findViewById(R.id.details);
         detail_length = (TextView)findViewById(R.id.detail_length);
         submit = findViewById(R.id.submit);
@@ -34,6 +31,7 @@ public class tutoring extends AppCompatActivity {
         details.setVisibility(View.INVISIBLE);
         detail_length.setVisibility(View.INVISIBLE);
         submit.setVisibility(View.INVISIBLE);
+
 
         details.addTextChangedListener(new TextWatcher() {
             @Override
@@ -50,37 +48,17 @@ public class tutoring extends AppCompatActivity {
             }
         });
 
-        spinner_subject.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinner_trailer_size.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                subject = parent.getItemAtPosition(position).toString();
-                switch (subject) {
-                    case "Please specify what needs to be tutored":
-                        spinner_grade.setVisibility(View.INVISIBLE);
+                size = parent.getItemAtPosition(position).toString();
+                switch (size) {
+                    case "Please specify trailer size":
                         details.setVisibility(View.INVISIBLE);
                         detail_length.setVisibility(View.INVISIBLE);
                         submit.setVisibility(View.INVISIBLE);
                         break;
-                    default:
-                        spinner_grade.setVisibility(View.VISIBLE);
-                        break;
-                }
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
-        });
 
-        spinner_grade.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                grade = parent.getItemAtPosition(position).toString();
-                switch (grade) {
-                    case "Please specify grade":
-                        details.setVisibility(View.INVISIBLE);
-                        detail_length.setVisibility(View.INVISIBLE);
-                        submit.setVisibility(View.INVISIBLE);
-                        break;
                     default:
                         details.setVisibility(View.VISIBLE);
                         detail_length.setVisibility(View.VISIBLE);
@@ -92,10 +70,6 @@ public class tutoring extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
-
-
-
-
     }
 }
 

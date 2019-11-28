@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".tutoring">
+    tools:context=".packaging_moving">
 
     <ImageView
         android:id="@+id/icon"
@@ -15,47 +15,33 @@
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintEnd_toStartOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/tutoring" />
+        app:srcCompat="@drawable/packaging" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Tutoring"
-        android:textSize="40dp"
+        android:text="Packaging/Moving"
+        android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/spinner_subject"
-        android:entries="@array/subject_tutoring"
+        android:id="@+id/spinner_trailer_size"
         android:layout_width="0dp"
         android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:entries="@array/trailer_size_packing_moving"
         android:spinnerMode="dropdown"
         android:textSize="65dp"
+
         android:textStyle="bold"
-
-        android:layout_marginTop="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <Spinner
-        android:id="@+id/spinner_grade"
-        android:entries="@array/Grade"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:spinnerMode="dropdown"
-        android:textSize="65dp"
-        android:textStyle="bold"
-
-        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_subject" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 
     <EditText
@@ -70,8 +56,7 @@
         app:layout_constraintBottom_toTopOf="@+id/submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spinner_grade"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/spinner_subject" />
 
     <Button
         android:id="@+id/submit"

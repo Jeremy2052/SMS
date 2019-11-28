@@ -9,11 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".tutoring"></activity>
+        <activity android:name=".computer_repair"></activity>
+        <activity android:name=".packaging_moving" />
+        <activity android:name=".tutoring" />
         <activity android:name=".settings" />
         <activity android:name=".home_cleaning" />
-        <activity android:name=".electrical" />
-        <activity android:name=".settings" />
         <activity android:name=".electrical" />
         <activity android:name=".plumbing" />
         <activity android:name=".orders" />

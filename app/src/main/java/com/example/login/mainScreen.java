@@ -49,6 +49,9 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
         electrical = findViewById(R.id.electrical);
         plumbing = findViewById(R.id.plumbing);
         home_cleaning = findViewById(R.id.homeCleaning);
+        tutoring = findViewById(R.id.tutoring);
+        packaging_moving = findViewById(R.id.packaging);
+        computer_repair = findViewById(R.id.computer);
 
         settingB.setOnClickListener(this);
         back.setOnClickListener(this);
@@ -58,6 +61,9 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
         electrical.setOnClickListener(this);
         plumbing.setOnClickListener(this);
         home_cleaning.setOnClickListener(this);
+        tutoring.setOnClickListener(this);
+        packaging_moving.setOnClickListener(this);
+        computer_repair.setOnClickListener(this);
     }
 
     @Override
@@ -70,7 +76,6 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
                     Intent intent = new Intent(this, MainActivity.class);
                     startActivity(intent);
                 }
-
                 break;
             case R.id.appliances:
                 Intent appliance = new Intent(this, appliances.class);
@@ -88,10 +93,21 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
                 Intent home_cleaning = new Intent(this, home_cleaning.class);
                 startActivity(home_cleaning);
                 break;
-
+            case R.id.tutoring:
+                Intent tutoring = new Intent(this, tutoring.class);
+                startActivity(tutoring);
+                break;
+            case R.id.packaging:
+                Intent packaging_moving = new Intent(this, packaging_moving.class);
+                startActivity(packaging_moving);
+                break;
             case R.id.orders:
                 Intent order = new Intent(this, orders.class);
                 startActivity(order);
+                break;
+            case R.id.computer:
+                Intent computer_repair = new Intent(this, computer_repair.class);
+                startActivity(computer_repair);
                 break;
 
             case R.id.backB:
