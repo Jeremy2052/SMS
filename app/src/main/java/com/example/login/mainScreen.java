@@ -52,6 +52,7 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
         tutoring = findViewById(R.id.tutoring);
         packaging_moving = findViewById(R.id.packaging);
         computer_repair = findViewById(R.id.computer);
+        home_repair = findViewById(R.id.homeRepair);
 
         settingB.setOnClickListener(this);
         back.setOnClickListener(this);
@@ -64,6 +65,7 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
         tutoring.setOnClickListener(this);
         packaging_moving.setOnClickListener(this);
         computer_repair.setOnClickListener(this);
+        home_repair.setOnClickListener(this);
     }
 
     @Override
@@ -109,6 +111,11 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
                 Intent computer_repair = new Intent(this, computer_repair.class);
                 startActivity(computer_repair);
                 break;
+            case R.id.homeRepair:
+                Intent home_repair = new Intent(this, home_repair.class);
+                startActivity(home_repair);
+                break;
+
 
             case R.id.backB:
                 Intent back = new Intent(mainScreen.this, MainActivity.class);
