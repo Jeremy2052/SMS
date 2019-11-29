@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".pest_control"></activity>
+        <activity android:name=".chooseVendor"></activity>
+        <activity android:name=".pest_control" />
         <activity android:name=".home_repair" />
         <activity android:name=".computer_repair" />
         <activity android:name=".packaging_moving" />

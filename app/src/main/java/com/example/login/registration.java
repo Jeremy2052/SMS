@@ -33,7 +33,7 @@ public class registration extends AppCompatActivity implements View.OnClickListe
     private EditText phoneNumber;
     private EditText password;
     private Button signup;
-    String first2, last2, Email, phone, pass;
+    String firstc, lastc, Emailc, phonec, passc;
 
     private FirebaseAuth firebaseAuth;
 
@@ -57,39 +57,39 @@ public class registration extends AppCompatActivity implements View.OnClickListe
 
 
     private void register(){
-         first2 = firstName.getText().toString().trim();
-         last2 = lastName.getText().toString().trim();
-         Email = email.getText().toString().trim();
-         phone = phoneNumber.getText().toString().trim();
-         pass = password.getText().toString().trim();
+         firstc = firstName.getText().toString();
+         lastc = lastName.getText().toString();
+         Emailc = email.getText().toString();
+         phonec = phoneNumber.getText().toString();
+         passc = password.getText().toString();
 
-        if(TextUtils.isEmpty(first2)){
+        if(TextUtils.isEmpty(firstc)){
             //first name is empty
             Toast.makeText(this, "Enter a first name",Toast.LENGTH_SHORT).show();
             return;
         }
-        if(TextUtils.isEmpty(last2)){
+        if(TextUtils.isEmpty(lastc)){
             //first name is empty
             Toast.makeText(this, "Enter a last name",Toast.LENGTH_SHORT).show();
             return;
         }
-        if(TextUtils.isEmpty(pass)){
+        if(TextUtils.isEmpty(passc)){
             //first name is empty
             Toast.makeText(this, "Enter a password",Toast.LENGTH_SHORT).show();
             return;
         }
-        if(TextUtils.isEmpty(Email)){
+        if(TextUtils.isEmpty(Emailc)){
             //first name is empty
             Toast.makeText(this, "Enter an email",Toast.LENGTH_SHORT).show();
             return;
         }
-        if(TextUtils.isEmpty(phone)){
+        if(TextUtils.isEmpty(phonec)){
             //first name is empty
             Toast.makeText(this, "Enter a phone number",Toast.LENGTH_SHORT).show();
             return;
         }
 
-        firebaseAuth.createUserWithEmailAndPassword(Email,pass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+        firebaseAuth.createUserWithEmailAndPassword(Emailc,passc).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
@@ -98,9 +98,10 @@ public class registration extends AppCompatActivity implements View.OnClickListe
                     Toast.makeText(registration.this, "Could not register, please try again",Toast.LENGTH_SHORT).show();
 
                 }else{
+                    Toast.makeText(registration.this, "Registration successful",Toast.LENGTH_SHORT).show();
                     sendUser();
                     //display registration was successful
-                    Toast.makeText(registration.this, "Registration successful",Toast.LENGTH_SHORT).show();
+
 
                 }
             }
@@ -113,9 +114,9 @@ public class registration extends AppCompatActivity implements View.OnClickListe
 
     private void sendUser(){
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = firebaseDatabase.getReference(firebaseAuth.getUid());
-        UserInformation userInformation = new UserInformation(first2,last2,Email,phone,pass);
-        myRef.setValue(userInformation);
+        DatabaseReference myRef2 = firebaseDatabase.getReference(firebaseAuth.getUid());
+        UserInformation userInformation = new UserInformation(firstc,lastc,Emailc,phonec,passc);
+        myRef2.setValue(userInformation);
     }
 
     @Override
