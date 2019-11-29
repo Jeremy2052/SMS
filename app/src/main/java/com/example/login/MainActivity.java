@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(task.isSuccessful()){
                     Intent intent3 = new Intent(getApplicationContext(), mainScreen.class);
                     startActivity(intent3);
-                    finish();
+                    //finish();//-------------------------
 
                 }else{
                     Toast.makeText(MainActivity.this, "Login failed",Toast.LENGTH_SHORT).show();
@@ -101,13 +101,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.skip:
                 Intent intent2 = new Intent(MainActivity.this, mainScreen.class);
                 startActivity(intent2);
-                finish();
+                //finish();
                 break;
 
             case R.id.vendorLogin:
                 Intent intent3 = new Intent(MainActivity.this, vendorLogin.class);
                 startActivity(intent3);
-                finish();
+                //finish();
         }
     }
 }

@@ -122,8 +122,8 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
                 startActivity(pest_control);
                 break;
             case R.id.backB:
-                Intent back = new Intent(this, MainActivity.class);
-                startActivity(back);
+                //Intent back = new Intent(this, MainActivity.class);
+                //startActivity(back);
                 finish();
                 break;
             case R.id.settingB:

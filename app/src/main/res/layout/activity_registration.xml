@@ -55,7 +55,7 @@
 
     <EditText
         android:id="@+id/email"
-        android:layout_width="395dp"
+        android:layout_width="380dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -68,14 +68,14 @@
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/passwordR"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/phonenumber"
-        android:layout_width="395dp"
+        android:layout_width="380dp"
         android:layout_height="45dp"
-        android:layout_marginBottom="196dp"
+        android:layout_marginBottom="236dp"
         android:ems="10"
         android:hint="Phone Number"
         android:inputType="phone"
@@ -128,7 +128,7 @@
 
     <EditText
         android:id="@+id/passwordR"
-        android:layout_width="395dp"
+        android:layout_width="380dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
