@@ -40,7 +40,6 @@ public class appliances extends AppCompatActivity implements View.OnClickListene
 
         submit.setOnClickListener(this);
 
-
         details.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -62,7 +61,6 @@ public class appliances extends AppCompatActivity implements View.OnClickListene
                 room = parent.getItemAtPosition(position).toString();
                 switch (room) {
                     case "Select a Room":
-                        Toast.makeText(parent.getContext(), "Select a Room", Toast.LENGTH_SHORT).show();
                         spinner_kitchen_app.setVisibility(View.INVISIBLE);
                         spinner_bathroom_app.setVisibility(View.INVISIBLE);
                         spinner_bedroom_app.setVisibility(View.INVISIBLE);
@@ -71,7 +69,6 @@ public class appliances extends AppCompatActivity implements View.OnClickListene
                         submit.setVisibility(View.INVISIBLE);
                         break;
                     case "Kitchen":
-                        Toast.makeText(parent.getContext(), "Kitchen", Toast.LENGTH_SHORT).show();
                         spinner_kitchen_app.setVisibility(View.VISIBLE);
                         spinner_bathroom_app.setVisibility(View.INVISIBLE);
                         spinner_bedroom_app.setVisibility(View.INVISIBLE);
@@ -80,7 +77,6 @@ public class appliances extends AppCompatActivity implements View.OnClickListene
                         submit.setVisibility(View.INVISIBLE);
                         break;
                     case "Bathroom":
-                        Toast.makeText(parent.getContext(), "Bathroom", Toast.LENGTH_SHORT).show();
                         spinner_kitchen_app.setVisibility(View.INVISIBLE);
                         spinner_bathroom_app.setVisibility(View.VISIBLE);
                         spinner_bedroom_app.setVisibility(View.INVISIBLE);
@@ -89,7 +85,6 @@ public class appliances extends AppCompatActivity implements View.OnClickListene
                         submit.setVisibility(View.INVISIBLE);
                         break;
                     case "Bedroom":
-                        Toast.makeText(parent.getContext(), "Bedroom", Toast.LENGTH_SHORT).show();
                         spinner_kitchen_app.setVisibility(View.INVISIBLE);
                         spinner_bathroom_app.setVisibility(View.INVISIBLE);
                         spinner_bedroom_app.setVisibility(View.VISIBLE);
@@ -98,7 +93,6 @@ public class appliances extends AppCompatActivity implements View.OnClickListene
                         submit.setVisibility(View.INVISIBLE);
                         break;
                     case "Other":
-                        Toast.makeText(parent.getContext(), "Other", Toast.LENGTH_SHORT).show();
                         spinner_kitchen_app.setVisibility(View.INVISIBLE);
                         spinner_bathroom_app.setVisibility(View.INVISIBLE);
                         spinner_bedroom_app.setVisibility(View.INVISIBLE);
@@ -110,6 +104,7 @@ public class appliances extends AppCompatActivity implements View.OnClickListene
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
 
@@ -118,7 +113,7 @@ public class appliances extends AppCompatActivity implements View.OnClickListene
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 appliance_item = parent.getItemAtPosition(position).toString();
                 switch (appliance_item){
-                    case "Select a Kitchen Appliance":
+                    case "Select an Appliance":
                         details.setVisibility(View.INVISIBLE);
                         detail_length.setVisibility(View.INVISIBLE);
                         break;
@@ -138,7 +133,7 @@ public class appliances extends AppCompatActivity implements View.OnClickListene
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 appliance_item = parent.getItemAtPosition(position).toString();
                 switch (appliance_item){
-                    case "Select a Bathroom Appliance":
+                    case "Select an Appliance":
                         details.setVisibility(View.INVISIBLE);
                         detail_length.setVisibility(View.INVISIBLE);
                         break;
@@ -160,7 +155,7 @@ public class appliances extends AppCompatActivity implements View.OnClickListene
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 appliance_item = parent.getItemAtPosition(position).toString();
                 switch (appliance_item){
-                    case "Select a Bedroom Appliance":
+                    case "Select an Appliance":
                         details.setVisibility(View.INVISIBLE);
                         detail_length.setVisibility(View.INVISIBLE);
                         submit.setVisibility(View.INVISIBLE);
@@ -184,7 +179,6 @@ public class appliances extends AppCompatActivity implements View.OnClickListene
         if(v==submit){
             Intent choose = new Intent(this, chooseVendor.class);
             startActivity(choose);
-
         }
     }
 }

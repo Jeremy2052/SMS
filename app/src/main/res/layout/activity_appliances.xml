@@ -89,7 +89,6 @@
         android:background="@android:drawable/alert_light_frame"
         android:hint="Please provide additional details here. (optional)"
         android:maxLength="300"
-        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

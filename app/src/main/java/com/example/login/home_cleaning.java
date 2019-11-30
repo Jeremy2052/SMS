@@ -116,6 +116,9 @@ public class home_cleaning extends AppCompatActivity implements View.OnClickList
                     room += " Bathroom";
             default:
                 Toast.makeText(this, room,Toast.LENGTH_SHORT).show();
+
+                Intent choose = new Intent(this, chooseVendor.class);
+                startActivity(choose);
         }
     }
 }
