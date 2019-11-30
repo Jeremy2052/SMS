@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00990D0D"
-    tools:context=".registration">
+    android:background="@drawable/simple_background_v2"
+    tools:context=".registration"
+    >
 
     <View
         android:id="@+id/view"

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".electrical">
+    tools:context=".electrical"
+    android:background="@drawable/simple_background_v2">
 
     <ImageView
         android:id="@+id/icon"
