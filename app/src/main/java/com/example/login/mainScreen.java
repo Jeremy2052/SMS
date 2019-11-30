@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -30,6 +31,8 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
     private ImageButton home_repair;
     private ImageButton pest_control;
 
+    private TextView displayUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +42,7 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
       // setSupportActionBar(toolbar);
 
         firebaseAuth = FirebaseAuth.getInstance();
-        //FirebaseUser user = firebaseAuth.getCurrentUser();
+        FirebaseUser user = firebaseAuth.getCurrentUser();
 
         settingB = findViewById(R.id.settingB);
         back = findViewById(R.id.backB);
@@ -54,6 +57,12 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
         computer_repair = findViewById(R.id.computer);
         home_repair = findViewById(R.id.homeRepair);
         pest_control = findViewById(R.id.pestControl);
+        displayUser = findViewById(R.id.displayUser);
+
+        if(firebaseAuth.getCurrentUser()!=null){
+            displayUser.setText(user.getEmail());
+        }
+
 
         settingB.setOnClickListener(this);
         back.setOnClickListener(this);
