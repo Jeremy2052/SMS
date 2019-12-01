@@ -108,7 +108,7 @@ public class home_cleaning extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.submit:
-                if (Bedroom.isChecked())// && Kitchen.isChecked() && Bathroom.isChecked())
+                if (Bedroom.isChecked())
                     room = "Bedroom";
                 if (Kitchen.isChecked())
                     room += " Kitchen";
@@ -116,6 +116,9 @@ public class home_cleaning extends AppCompatActivity implements View.OnClickList
                     room += " Bathroom";
             default:
                 Toast.makeText(this, room,Toast.LENGTH_SHORT).show();
+
+                Intent choose = new Intent(this, chooseVendor.class);
+                startActivity(choose);
         }
     }
 }

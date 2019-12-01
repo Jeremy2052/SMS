@@ -10,7 +10,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.*;
 
-public class pest_control extends AppCompatActivity {
+public class pest_control extends AppCompatActivity implements View.OnClickListener{
     Spinner spinner_pest;
     EditText details;
     TextView detail_length;
@@ -33,6 +33,7 @@ public class pest_control extends AppCompatActivity {
         detail_length.setVisibility(View.INVISIBLE);
         submit.setVisibility(View.INVISIBLE);
 
+        submit.setOnClickListener(this);
 
         details.addTextChangedListener(new TextWatcher() {
             @Override
@@ -70,6 +71,14 @@ public class pest_control extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
+    }
+    @Override
+    public void onClick(View v) {
+        if(v==submit){
+            Intent choose = new Intent(this, chooseVendor.class);
+            startActivity(choose);
+
+        }
     }
 }
 

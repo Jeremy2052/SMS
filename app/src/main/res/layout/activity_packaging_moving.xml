@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".packaging_moving">
+    tools:context=".packaging_moving"
+    android:background="@drawable/simple_background_v2">
 
     <ImageView
         android:id="@+id/icon"

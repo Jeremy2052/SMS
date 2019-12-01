@@ -11,13 +11,11 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.*;
 
-public class computer_repair extends AppCompatActivity {
+public class computer_repair extends AppCompatActivity implements View.OnClickListener{
 
     EditText details;
     TextView detail_length;
     Button submit;
-
-    String subject, grade;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +27,8 @@ public class computer_repair extends AppCompatActivity {
         submit = findViewById(R.id.submit);
 
         submit.setVisibility(View.INVISIBLE);
+
+        submit.setOnClickListener(this);
 
         details.addTextChangedListener(new TextWatcher() {
             @Override
@@ -45,6 +45,14 @@ public class computer_repair extends AppCompatActivity {
                 submit.setVisibility(View.VISIBLE);
             }
         });
+    }
+    @Override
+    public void onClick(View v) {
+        if(v==submit){
+            Intent choose = new Intent(this, chooseVendor.class);
+            startActivity(choose);
+
+        }
     }
 }
 

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/simple_background_v2"
     tools:context=".home_cleaning">
 
     <ImageView
@@ -21,6 +22,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:text="Home Cleaning"
         android:textSize="40dp"
@@ -78,8 +80,8 @@
         android:id="@+id/submit"
         android:layout_width="159dp"
         android:layout_height="39dp"
-        android:text="Submit"
         android:layout_marginBottom="20dp"
+        android:text="Submit"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -93,8 +95,6 @@
         android:text="0/300"
         app:layout_constraintRight_toRightOf="@id/details"
         app:layout_constraintTop_toBottomOf="@id/details" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

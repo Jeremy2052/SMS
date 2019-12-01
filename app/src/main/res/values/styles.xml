@@ -15,4 +15,9 @@
         <item name="android:background">?android:attr/listDivider</item>
     </style>
 
+    <style name="ratingBar"
+        parent="android:style/Widget.Material.RatingBar.Small">
+
+    </style>
+
 </resources>

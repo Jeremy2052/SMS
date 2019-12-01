@@ -55,6 +55,12 @@ public class registration extends AppCompatActivity implements View.OnClickListe
         signup.setOnClickListener(this);
     }
 
+    private void sendUser(){
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference myRef2 = firebaseDatabase.getReference(firebaseAuth.getUid());
+        UserInformation userInformation = new UserInformation(firstc,lastc,Emailc,phonec,passc);
+        myRef2.setValue(userInformation);
+    }
 
     private void register(){
          firstc = firstName.getText().toString();
@@ -92,7 +98,7 @@ public class registration extends AppCompatActivity implements View.OnClickListe
         firebaseAuth.createUserWithEmailAndPassword(Emailc,passc).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
+                //Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
                 if(!task.isSuccessful()){
                     Log.d(TAG, "onComplete: Failed=" + task.getException().getMessage());
                     Toast.makeText(registration.this, "Could not register, please try again",Toast.LENGTH_SHORT).show();
@@ -112,12 +118,6 @@ public class registration extends AppCompatActivity implements View.OnClickListe
         finish();
     }
 
-    private void sendUser(){
-        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference myRef2 = firebaseDatabase.getReference(firebaseAuth.getUid());
-        UserInformation userInformation = new UserInformation(firstc,lastc,Emailc,phonec,passc);
-        myRef2.setValue(userInformation);
-    }
 
     @Override
     public void onClick(View v) {
