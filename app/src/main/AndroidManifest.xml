@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.login">
+    <uses-sdk tools:overrideLibrary="com.google.android.gms.all"/>
+    <!-- line 3 & 5 overrides minsdk for stripe use -->
 
     <application
         android:allowBackup="true"
@@ -22,7 +25,6 @@
         <activity android:name=".orders" />
         <activity android:name=".vendorLogin" />
         <activity android:name=".appliances" />
-        <activity android:name=".paymentScreen" />
         <activity android:name=".vendorMainScreen" />
         <activity android:name=".vendorRegister" />
         <activity android:name=".mainScreen" />
