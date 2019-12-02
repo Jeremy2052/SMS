@@ -56,9 +56,10 @@ public class registration extends AppCompatActivity implements View.OnClickListe
     }
 
     private void sendUser(){
-        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference myRef2 = firebaseDatabase.getReference(firebaseAuth.getUid());
         UserInformation userInformation = new UserInformation(firstc,lastc,Emailc,phonec,passc);
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference myRef2 = firebaseDatabase.getReference("Customers");
+
         myRef2.setValue(userInformation);
     }
 
@@ -100,11 +101,11 @@ public class registration extends AppCompatActivity implements View.OnClickListe
             public void onComplete(@NonNull Task<AuthResult> task) {
                 //Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
                 if(!task.isSuccessful()){
-                    Log.d(TAG, "onComplete: Failed=" + task.getException().getMessage());
+                   // Log.d(TAG, "onComplete: Failed=" + task.getException().getMessage());
                     Toast.makeText(registration.this, "Could not register, please try again",Toast.LENGTH_SHORT).show();
 
                 }else{
-                    Toast.makeText(registration.this, "Registration successful",Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(registration.this, "Registration successful",Toast.LENGTH_SHORT).show();
                     sendUser();
                     //display registration was successful
 
@@ -112,7 +113,7 @@ public class registration extends AppCompatActivity implements View.OnClickListe
                 }
             }
         });
-        
+
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();

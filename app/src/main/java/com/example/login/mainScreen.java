@@ -41,8 +41,7 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
       // Toolbar toolbar = findViewById(R.id.toolbar);
       // setSupportActionBar(toolbar);
 
-        firebaseAuth = FirebaseAuth.getInstance();
-        FirebaseUser user = firebaseAuth.getCurrentUser();
+
 
         settingB = findViewById(R.id.settingB);
         back = findViewById(R.id.backB);
@@ -59,9 +58,9 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
         pest_control = findViewById(R.id.pestControl);
         displayUser = findViewById(R.id.displayUser);
 
-        if(firebaseAuth.getCurrentUser()!=null){
-            displayUser.setText(user.getEmail());
-        }
+        /*if(firebaseAuth.getCurrentUser()!=null){
+           // displayUser.setText(user.getEmail());
+        }*/
 
 
         settingB.setOnClickListener(this);
@@ -83,6 +82,8 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.logout:
+                 firebaseAuth = FirebaseAuth.getInstance();
+                //FirebaseUser user = firebaseAuth.getCurrentUser();
                 if(firebaseAuth.getCurrentUser()!=null){
                     firebaseAuth.signOut();
                     finish();

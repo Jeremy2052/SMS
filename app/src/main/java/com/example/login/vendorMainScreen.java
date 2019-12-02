@@ -55,6 +55,8 @@ public class vendorMainScreen extends AppCompatActivity implements View.OnClickL
                 finish();
                 break;
             case R.id.addService:
+                Intent servi = new Intent(this, addServices.class);
+                startActivity(servi);
                 break;
            // case R.id.acceptService:
                 //break;

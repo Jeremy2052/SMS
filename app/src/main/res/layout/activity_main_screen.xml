@@ -289,8 +289,8 @@
 
     <TextView
         android:id="@+id/displayUser"
-        android:layout_width="99dp"
-        android:layout_height="23dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
         android:gravity="center"
         android:text=""
