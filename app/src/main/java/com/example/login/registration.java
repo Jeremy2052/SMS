@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.login.models.Customer;
+import com.example.login.models.Customer;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -62,7 +64,12 @@ public class registration extends AppCompatActivity implements View.OnClickListe
 
         myRef2.setValue(userInformation);
     }
-
+    //delete later
+    private void redirectMainActivity(){
+        Intent intent = new Intent(registration.this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
     private void register(){
          firstc = firstName.getText().toString();
          lastc = lastName.getText().toString();
@@ -96,19 +103,39 @@ public class registration extends AppCompatActivity implements View.OnClickListe
             return;
         }
 
-        firebaseAuth.createUserWithEmailAndPassword(Emailc,passc).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+        firebaseAuth.createUserWithEmailAndPassword(Emailc,passc)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                //Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
+                Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
+                if(task.isSuccessful()){
+                    //***********************
+                    //osman: i removed "this." form thelistener to have everything inside this function to work
+
+
+                    //display registration was successful
+                    Log.d(TAG, "onComplete: AuthState: " + FirebaseAuth.getInstance().getCurrentUser().getUid());
+                    //send email verification(code later....)
+
+                    //create object user for database - this will save the users info for later use on fire base
+                    Customer customer = new Customer(); /// look at "models/User" for more info
+                    customer.setFirstName(firstc);
+                    customer.setLastName(lastc);
+                    customer.setPhone(phonec);
+                    customer.setUser_id(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                    //insert database reference object
+                    FirebaseDatabase.getInstance().getReference()
+                            .child(getString(R.string.dbnode_users))
+                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                            .setValue(customer);
+                    redirectMainActivity();
+                    //************************
+
+                    sendUser();
+                }
                 if(!task.isSuccessful()){
                    // Log.d(TAG, "onComplete: Failed=" + task.getException().getMessage());
                     Toast.makeText(registration.this, "Could not register, please try again",Toast.LENGTH_SHORT).show();
-
-                }else{
-                   // Toast.makeText(registration.this, "Registration successful",Toast.LENGTH_SHORT).show();
-                    sendUser();
-                    //display registration was successful
-
 
                 }
             }
