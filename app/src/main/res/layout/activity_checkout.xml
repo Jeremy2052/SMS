@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".CheckoutActivity"
+    android:background="@drawable/simple_background_v2"
     tools:showIn="@layout/activity_checkout">
 
     <!--  ...  -->

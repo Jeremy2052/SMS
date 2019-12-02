@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.*;
 
@@ -13,9 +14,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
+//import from models for user object
+import com.example.login.models.User;
 
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class  MainActivity extends AppCompatActivity implements View.OnClickListener {
         private EditText emaill;
         private EditText password;
         private Button login;
@@ -54,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void userLogin(){
-        String email2 = emaill.getText().toString().trim();
+        final String email2 = emaill.getText().toString().trim();
         String pass2 = password.getText().toString().trim();
 
         if(TextUtils.isEmpty(email2)){
@@ -72,6 +77,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
+                    Log.d("FragmentActivity", "onComplete: AuthState: " + FirebaseAuth.getInstance().getCurrentUser().getUid());
+                    //create object user for database
+                    User user = new User();
+                    user.setName(email2.substring(0, email2.indexOf("@")));
+                    user.setPhone("1");
+                    user.setUser_id(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                    //insert database reference object
+                    FirebaseDatabase.getInstance().getReference()
+                            .child(getString(R.string.dbnode_users))
+                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                            .setValue(user);
+
+
+
                     Intent intent3 = new Intent(getApplicationContext(), mainScreen.class);
                     startActivity(intent3);
                     //finish();//-------------------------
