@@ -128,7 +128,7 @@ public class registration extends AppCompatActivity implements View.OnClickListe
                             .child(getString(R.string.dbnode_users))
                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                             .setValue(customer);
-                    redirectMainActivity();
+                   // redirectMainActivity();
                     //************************
 
                     sendUser();

@@ -36,10 +36,11 @@
         android:id="@+id/acceptService"
         android:layout_width="265dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="424dp"
+        android:layout_marginBottom="504dp"
         android:text="Accept Services"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button

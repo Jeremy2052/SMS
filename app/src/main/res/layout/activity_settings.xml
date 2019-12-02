@@ -81,9 +81,8 @@
         android:layout_width="209dp"
         android:layout_height="32dp"
         android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
         android:layout_marginTop="272dp"
-        android:text="Comission"
+        android:text="Commission"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -93,10 +92,11 @@
         android:layout_width="70dp"
         android:layout_height="36dp"
         android:layout_marginStart="72dp"
-        android:layout_marginLeft="72dp"
         android:layout_marginTop="140dp"
+        android:layout_marginEnd="15dp"
         android:checked="true"
         android:text="ToggleButton"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/sound"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -105,9 +105,10 @@
         android:layout_width="70dp"
         android:layout_height="36dp"
         android:layout_marginStart="72dp"
-        android:layout_marginLeft="72dp"
         android:layout_marginTop="204dp"
+        android:layout_marginEnd="15dp"
         android:text="ToggleButton"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView16"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -127,10 +128,11 @@
         android:layout_width="70dp"
         android:layout_height="36dp"
         android:layout_marginStart="68dp"
-        android:layout_marginLeft="68dp"
         android:layout_marginTop="260dp"
+        android:layout_marginEnd="15dp"
         android:checked="true"
         android:text="ToggleButton"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView17"
         app:layout_constraintTop_toTopOf="parent" />
 

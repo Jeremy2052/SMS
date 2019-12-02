@@ -23,6 +23,7 @@ public class vendorLogin extends AppCompatActivity implements View.OnClickListen
     private EditText passwordV;
     private Button loginV;
     private Button signupV;
+    private Button backLog;
     private FirebaseAuth firebaseAuth;
 
     @Override
@@ -43,10 +44,11 @@ public class vendorLogin extends AppCompatActivity implements View.OnClickListen
         passwordV = findViewById(R.id.passwordv);
         loginV = findViewById(R.id.loginV);
         signupV = findViewById(R.id.signupV);
+        backLog = findViewById(R.id.backLog);
 
         loginV.setOnClickListener(this);
         signupV.setOnClickListener(this);
-
+        backLog.setOnClickListener(this);
     }
 
     private void vendor_Login(){
@@ -91,6 +93,11 @@ public class vendorLogin extends AppCompatActivity implements View.OnClickListen
                 startActivity(intent2);
 
                 break;
+
+            case R.id.backLog:
+                Intent bclg = new Intent(this, MainActivity.class);
+                startActivity(bclg);
+                finish();
         }
 
     }
