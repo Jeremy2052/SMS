@@ -71,7 +71,7 @@ public class addServices extends AppCompatActivity  implements AdapterView.OnIte
 
     private void setData(){
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference myRef2 = firebaseDatabase.getReference();
+        DatabaseReference myRef2 = firebaseDatabase.getReference("Vendors").child(firebaseAuth.getCurrentUser().getUid());
 
         myRef2.child("Price").setValue(prices);
         myRef2.child("Service").setValue(service);

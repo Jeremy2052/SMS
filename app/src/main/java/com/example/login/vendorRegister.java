@@ -149,7 +149,7 @@ public class vendorRegister extends AppCompatActivity implements View.OnClickLis
 
     private void sendVendor(){
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = firebaseDatabase.getReference("Vendors");
+        DatabaseReference myRef = firebaseDatabase.getReference("Vendors").child(firebaseAuth.getCurrentUser().getUid());
         vendorInformation vendorInformation = new vendorInformation(Vendor,Address,Email,phone,pass,City,Zipcode);
         myRef.setValue(vendorInformation);
     }

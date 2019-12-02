@@ -50,9 +50,10 @@ public class vendorMainScreen extends AppCompatActivity implements View.OnClickL
         switch (v.getId()){
             case R.id.logoutV:
                 firebaseAuth.signOut();
+                finish();
                 Intent intent3 = new Intent(this, vendorLogin.class);
                 startActivity(intent3);
-                finish();
+
                 break;
             case R.id.addService:
                 Intent servi = new Intent(this, addServices.class);

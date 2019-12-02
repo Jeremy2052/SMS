@@ -58,7 +58,7 @@ public class registration extends AppCompatActivity implements View.OnClickListe
     private void sendUser(){
         UserInformation userInformation = new UserInformation(firstc,lastc,Emailc,phonec,passc);
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference myRef2 = firebaseDatabase.getReference("Customers");
+        DatabaseReference myRef2 = firebaseDatabase.getReference("Customers").child(firebaseAuth.getCurrentUser().getUid());
 
         myRef2.setValue(userInformation);
     }
