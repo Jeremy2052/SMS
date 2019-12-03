@@ -56,7 +56,7 @@ public class mainScreen extends AppCompatActivity implements View.OnClickListene
         computer_repair = findViewById(R.id.computer);
         home_repair = findViewById(R.id.homeRepair);
         pest_control = findViewById(R.id.pestControl);
-        displayUser = findViewById(R.id.displayUser);
+       // displayUser = findViewById(R.id.displayUser);
 
         /*if(firebaseAuth.getCurrentUser()!=null){
            // displayUser.setText(user.getEmail());

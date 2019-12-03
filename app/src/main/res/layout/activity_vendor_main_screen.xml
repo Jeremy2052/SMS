@@ -24,8 +24,8 @@
 
     <Button
         android:id="@+id/addService"
-        android:layout_width="265dp"
-        android:layout_height="50dp"
+        android:layout_width="274dp"
+        android:layout_height="64dp"
         android:layout_marginTop="156dp"
         android:text="Add Services"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,8 +34,8 @@
 
     <Button
         android:id="@+id/acceptService"
-        android:layout_width="265dp"
-        android:layout_height="50dp"
+        android:layout_width="271dp"
+        android:layout_height="57dp"
         android:layout_marginBottom="504dp"
         android:text="Accept Services"
         app:layout_constraintBottom_toBottomOf="parent"

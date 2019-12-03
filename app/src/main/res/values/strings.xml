@@ -1,5 +1,6 @@
 <resources>
 
+
     <string-array name="room_appliance">
         <item>Select a Room</item>
         <item>Kitchen</item>
@@ -218,6 +219,12 @@
         <item>WY</item>
 
     </string-array>
+
+    <string-array name="vendorNames">
+        <item>General Repair ($23.00) </item>
+        <item>Appliance Co. ($18.00)</item>
+    </string-array>
+
     <string name="title_activity_settings">Settings</string>
 
     <string name="Pay">pay</string>
@@ -240,8 +247,6 @@
     <string name="field_chatroom_messages">chatroom_messages</string>
     <string name="field_message">message</string>
     <string name="field_timestamp">timestamp</string>
-
-
 
 
     <!-- Preference Titles -->

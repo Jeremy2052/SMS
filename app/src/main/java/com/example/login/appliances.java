@@ -16,7 +16,7 @@ public class appliances extends AppCompatActivity implements View.OnClickListene
     TextView detail_length;
     Button submit;
 
-    String room, appliance_item;
+    String room, appliance_item,service = "Appliance";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -178,6 +178,7 @@ public class appliances extends AppCompatActivity implements View.OnClickListene
     public void onClick(View v) {
         if(v==submit){
             Intent choose = new Intent(this, chooseVendor.class);
+            choose.putExtra("Service",service);
             startActivity(choose);
         }
     }

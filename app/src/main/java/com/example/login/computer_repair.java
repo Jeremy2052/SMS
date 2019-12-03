@@ -16,7 +16,7 @@ public class computer_repair extends AppCompatActivity implements View.OnClickLi
     EditText details;
     TextView detail_length;
     Button submit;
-
+    String service = "Computer Repair";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +50,7 @@ public class computer_repair extends AppCompatActivity implements View.OnClickLi
     public void onClick(View v) {
         if(v==submit){
             Intent choose = new Intent(this, chooseVendor.class);
+            choose.putExtra("Service",service);
             startActivity(choose);
 
         }

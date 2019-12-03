@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.login">
+
     <uses-sdk tools:overrideLibrary="com.google.android.gms.all" />
 
     <application
@@ -11,7 +12,10 @@
         android:roundIcon="@drawable/logo_dark"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CheckoutActivity"  android:exported="true"/>
+        <activity android:name=".acceptOrder"></activity>
+        <activity
+            android:name=".CheckoutActivity"
+            android:exported="true" />
         <activity android:name=".addServices" />
         <activity android:name=".chooseVendor" />
         <activity android:name=".pest_control" />

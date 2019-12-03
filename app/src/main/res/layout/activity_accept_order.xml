@@ -4,34 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".orders"
-    android:background="@drawable/simple_background_v2">
+    android:background="@drawable/simple_background_v2"
+    tools:context=".acceptOrder">
 
     <View
-        android:id="@+id/divider3"
-        android:layout_width="300dp"
+        android:id="@+id/view"
+        style="@style/Divider"
         android:layout_height="2dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="132dp"
         android:layout_marginEnd="8dp"
-        android:background="#1067CA"
-        android:scrollbarSize="8dp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="#0E3A81"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.171"
-        tools:visibility="visible" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView21"
-        android:layout_width="154dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="84dp"
-        android:text="Orders"
+        android:id="@+id/textView22"
+        android:layout_width="195dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="76dp"
+        android:text="Customer Orders"
         android:textAlignment="center"
-        android:textSize="30sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
